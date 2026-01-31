@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from './components/navbar';
+import './styles/navbar.css'; 
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      
+      <div className="content">
+        <Routes>
+          <Route path="/" element={<div>Ez a Home oldal</div>} />
+          <Route path="/grand-prix" element={<div>Ez a Grand Prix oldal</div>} />
+          <Route path="/drivers" element={<div>Ez a Drivers oldal</div>} />
+          <Route path="/teams" element={<div>Ez a Teams oldal</div>} />
+          <Route path="/circuits" element={<div>Ez a Circuits oldal</div>} />
+          <Route path="/login" element={<div>Ez a Login oldal</div>} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
