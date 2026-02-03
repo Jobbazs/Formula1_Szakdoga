@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
             ConstructorSeeder::class,    
             DriverSeeder::class,         
             GrandPrixSeeder::class,      
-            // RaceResultSeeder::class,  
-            // További seederek ide jönnek...
+            RaceResultSeeder::class,  
+            
         ]);
     }
 }
