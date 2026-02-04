@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('WorldChampionships')->default(0);
             $table->string('FirstGrandPrix', 100)->nullable();
             $table->string('Nation', 50)->nullable();
-            $table->string('Images', 255)->default('');
+            $table->string('Image', 255)->default('');
         });
     }
 

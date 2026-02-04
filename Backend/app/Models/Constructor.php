@@ -9,6 +9,23 @@ class Constructor extends Model
 {
     /** @use HasFactory<\Database\Factories\ConstructorFactory> */
     use HasFactory;
+    
+    protected $primaryKey = 'ConstructorID';
+    
+     protected $fillable = [
+        'ConstructorID', 
+        'Name', 
+        'TeamPrincipal', 
+        'FoundedYear',
+        'Podiums ',
+        'Wins ',
+        'PolePositions ',
+        'WorldChampionships ',
+        'FirstGrandPrix ',
+        'Nation ',
+        'Image ',
+        
+    ];
 
     public function drivers()
 {

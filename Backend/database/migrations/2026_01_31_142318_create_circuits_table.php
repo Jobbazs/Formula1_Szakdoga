@@ -19,7 +19,7 @@ return new class extends Migration
             $table->year('FirstGrandPrix')->nullable();
             $table->string('RecordLapTime', 20)->nullable();
             $table->string('RecordDriver', 100)->nullable();
-            $table->string('Images', 255)->default('');
+            $table->string('Image', 255)->default('');
         });
     }
 

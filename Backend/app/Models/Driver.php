@@ -10,6 +10,17 @@ class Driver extends Model
     /** @use HasFactory<\Database\Factories\DriverFactory> */
     use HasFactory;
 
+    protected $fillable = [
+        'DriverID', 
+        'Name', 
+        'ConstructorID', 
+        'Nationality',
+        'BirthDate ',
+        'Biography ',
+        'Image ',
+        
+     ];
+
     public function constructor()
     {
         return $this->belongsTo(Constructor::class, 'ConstructorID', 'ConstructorID');

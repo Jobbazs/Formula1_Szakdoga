@@ -10,6 +10,17 @@ class GrandPrix extends Model
     /** @use HasFactory<\Database\Factories\GrandPrixFactory> */
     use HasFactory;
 
+    protected $fillable = [
+        'GrandPrixID', 
+        'Name', 
+        'Country', 
+        'CircuitID',
+        'Year ',
+        'WinnerDriverID ',
+        'Image ',
+        
+     ];
+
     public function circuit()
 {
     return $this->belongsTo(Circuits::class, 'CircuitID', 'CircuitID');

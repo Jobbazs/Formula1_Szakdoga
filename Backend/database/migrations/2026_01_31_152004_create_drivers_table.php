@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('Nationality', 50);
             $table->date('BirthDate');
             $table->text('Biography')->default('');
-            $table->string('Drivers_image', 255)->default('');
+            $table->string('Image', 255)->default('');
 
             $table->foreign('ConstructorID')
                   ->references('ConstructorID')

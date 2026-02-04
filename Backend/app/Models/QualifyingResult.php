@@ -10,6 +10,15 @@ class QualifyingResult extends Model
     /** @use HasFactory<\Database\Factories\QualifyingResultFactory> */
     use HasFactory;
 
+     protected $fillable = [
+        'QualifyingID', 
+        'GrandPrixID', 
+        'DriverID', 
+        'ConstructorID',
+        'GridPosition ',
+        
+     ];
+
     public function grandPrix()
 {
     return $this->belongsTo(GrandPrix::class, 'GrandPrixID', 'GrandPrixID');

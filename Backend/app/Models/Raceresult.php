@@ -10,6 +10,21 @@ class RaceResult extends Model
     /** @use HasFactory<\Database\Factories\RaceresultFactory> */
     use HasFactory;
 
+      protected $fillable = [
+        'ResultID', 
+        'GrandPrixID', 
+        'DriverID', 
+        'ConstructorID',
+        'Position ',
+        'Grid ',
+        'Laps ',
+        'TimeOrRetired ',
+        'Points ',
+        'FastestLap ',
+        'GpOrSprint ',
+        
+    ];
+
     public function grandPrix()
 {
     return $this->belongsTo(GrandPrix::class, 'GrandPrixID', 'GrandPrixID');
