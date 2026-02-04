@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('CircuitID')->nullable();
             $table->year('Year');
             $table->unsignedBigInteger('WinnerDriverID')->nullable();
-            $table->string('Images', 255)->default('');
+            $table->string('Image', 255)->default('');
 
             $table->foreign('CircuitID')
                   ->references('CircuitID')

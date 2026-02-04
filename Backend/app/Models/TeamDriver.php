@@ -9,4 +9,13 @@ class TeamDriver extends Model
 {
     /** @use HasFactory<\Database\Factories\TeamDriverFactory> */
     use HasFactory;
+
+      protected $fillable = [
+        'ConstructorID', 
+        'DriverID', 
+        'FirstYear', 
+        'EndYear',
+        
+       
+    ];
 }

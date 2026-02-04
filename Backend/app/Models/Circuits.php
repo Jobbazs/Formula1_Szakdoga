@@ -9,6 +9,19 @@ class Circuits extends Model
 {
     /** @use HasFactory<\Database\Factories\CircuitsFactory> */
     use HasFactory;
+
+      protected $fillable = [
+        'CircuitID', 
+        'Name', 
+        'DriverID', 
+        'Location',
+        'Nation ',
+        'FirstGrandPrix ',
+        'RecordLapTime ',
+        'RecordDriver ',
+        'Image ',
+       
+    ];
     
     public function grandPrix()
 {

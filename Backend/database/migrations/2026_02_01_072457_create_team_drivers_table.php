@@ -13,24 +13,24 @@ return new class extends Migration
     {
           Schema::create('teams_drivers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('Teams_Id');
-            $table->unsignedBigInteger('Drivers_Id');
-            $table->year('First_Year');
-            $table->year('End_Year')->nullable();
+            $table->unsignedBigInteger('ConstructorID');
+            $table->unsignedBigInteger('DriverID');
+            $table->year('FirstYear');
+            $table->year('EndYear')->nullable();
 
-            $table->foreign('Teams_Id')
+            $table->foreign('ConstructorID')
                   ->references('ConstructorID')
                   ->on('constructors')
                   ->restrictOnDelete()
                   ->cascadeOnUpdate();
 
-            $table->foreign('Drivers_Id')
+            $table->foreign('DriverID')
                   ->references('DriverID')
                   ->on('drivers')
                   ->restrictOnDelete()
                   ->cascadeOnUpdate();
                   
-            $table->index(['Drivers_Id', 'First_Year', 'End_Year']);
+            $table->index(['DriverID', 'FirstYear', 'EndYear']);
         });
     }
 
