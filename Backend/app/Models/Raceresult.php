@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Raceresult extends Model
+class RaceResult extends Model
 {
     /** @use HasFactory<\Database\Factories\RaceresultFactory> */
     use HasFactory;
