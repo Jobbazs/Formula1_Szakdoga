@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('TimeOrRetired', 50)->nullable();
             $table->decimal('Points', 4, 1)->nullable();
             $table->boolean('FastestLap')->default(false);
-            $table->boolean('GpOrSprint')->default(false);
+            $table->boolean('GpOrSprint')->default(true);
 
             $table->foreign('GrandPrixID')
                   ->references('GrandPrixID')
