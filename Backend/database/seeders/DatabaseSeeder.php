@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             DriverSeeder::class,         
             GrandPrixSeeder::class,      
             RaceResultSeeder::class,  
+            QualifyingResultsSeeder::class
             
         ]);
     }
