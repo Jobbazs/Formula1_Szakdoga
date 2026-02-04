@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class QualifyingResultsSeeder extends Seeder
+class QualifyingResultSeeder extends Seeder
 {
     public function run()
     {
@@ -27,8 +27,8 @@ class QualifyingResultsSeeder extends Seeder
             foreach ($teamDriverMapping as $constructorId => $drivers) {
                 foreach ($drivers as $driverId) {
                     $allDrivers[] = [
-                        'driver_id' => $driverId,
-                        'constructor_id' => $constructorId
+                        'driverID' => $driverId,
+                        'constructorID' => $constructorId
                     ];
                 }
             }
@@ -39,8 +39,8 @@ class QualifyingResultsSeeder extends Seeder
             foreach ($allDrivers as $index => $driverData) {
                 $results[] = [
                     'GrandPrixID' => $grandPrixId,
-                    'DriverID' => $driverData['driver_id'],
-                    'ConstructorID' => $driverData['constructor_id'],
+                    'DriverID' => $driverData['driverID'],
+                    'ConstructorID' => $driverData['constructorID'],
                     'GridPosition' => $index + 1,
                 ];
             }
