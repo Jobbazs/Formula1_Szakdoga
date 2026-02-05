@@ -10,12 +10,15 @@ class QualifyingResult extends Model
     /** @use HasFactory<\Database\Factories\QualifyingResultFactory> */
     use HasFactory;
 
+            protected $primaryKey = 'QualifyingID';
+
+
      protected $fillable = [
         'QualifyingID', 
         'GrandPrixID', 
         'DriverID', 
         'ConstructorID',
-        'GridPosition ',
+        'GridPosition',
         
      ];
 

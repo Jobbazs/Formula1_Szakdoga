@@ -10,18 +10,21 @@ class RaceResult extends Model
     /** @use HasFactory<\Database\Factories\RaceresultFactory> */
     use HasFactory;
 
+    protected $primaryKey = 'ResultID';
+
+
       protected $fillable = [
         'ResultID', 
         'GrandPrixID', 
         'DriverID', 
         'ConstructorID',
-        'Position ',
-        'Grid ',
-        'Laps ',
-        'TimeOrRetired ',
-        'Points ',
-        'FastestLap ',
-        'GpOrSprint ',
+        'Position',
+        'Grid',
+        'Laps',
+        'TimeOrRetired',
+        'Points',
+        'FastestLap',
+        'GpOrSprint',
         
     ];
 

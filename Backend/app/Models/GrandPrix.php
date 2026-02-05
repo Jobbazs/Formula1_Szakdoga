@@ -10,14 +10,17 @@ class GrandPrix extends Model
     /** @use HasFactory<\Database\Factories\GrandPrixFactory> */
     use HasFactory;
 
+        protected $primaryKey = 'GrandPrixID';
+protected $table = 'grandprix';
+
     protected $fillable = [
         'GrandPrixID', 
         'Name', 
         'Country', 
         'CircuitID',
-        'Year ',
-        'WinnerDriverID ',
-        'Image ',
+        'Year',
+        'WinnerDriverID',
+        'Image',
         
      ];
 
