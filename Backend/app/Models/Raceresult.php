@@ -11,6 +11,7 @@ class RaceResult extends Model
     use HasFactory;
 
     protected $primaryKey = 'ResultID';
+    protected $table = 'race_result';
 
 
       protected $fillable = [

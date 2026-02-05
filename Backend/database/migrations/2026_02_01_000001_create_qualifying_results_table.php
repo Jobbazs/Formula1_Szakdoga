@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-             Schema::create('qualifyingresults', function (Blueprint $table) {
+             Schema::create('qualifying_result', function (Blueprint $table) {
             $table->id('QualifyingID');
             $table->unsignedBigInteger('GrandPrixID');
             $table->unsignedBigInteger('DriverID');
@@ -43,6 +43,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('qualifying_results');
-    }
+        Schema::dropIfExists('qualifying_result');  
+          }
 };

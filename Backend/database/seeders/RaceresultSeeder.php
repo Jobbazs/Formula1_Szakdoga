@@ -12,7 +12,7 @@ class RaceResultSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 1, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => 1, 'grid' => 1, 'laps' => 57, 'TimeOrRetired' => '1:31:44.742', 'points' => 26.0, 'FastestLap' => true],
             ['GrandPrixID' => 1, 'DriverID' => 2, 'ConstructorID' => 1, 'position' => 2, 'grid' => 5, 'laps' => 57, 'TimeOrRetired' => '+22.457s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 1, 'DriverID' => 6, 'ConstructorID' => 2, 'position' => 3, 'grid' => 4, 'laps' => 57, 'TimeOrRetired' => '+25.110s', 'points' => 15.0, 'FastestLap' => false],
@@ -35,7 +35,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 1, 'DriverID' => 17, 'ConstructorID' => 7, 'position' => 20, 'grid' => 20, 'laps' => 55, 'TimeOrRetired' => '+2 laps', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 2, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => 1, 'grid' => 1, 'laps' => 50, 'TimeOrRetired' => '1:20:43.273', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 2, 'DriverID' => 2, 'ConstructorID' => 1, 'position' => 2, 'grid' => 3, 'laps' => 50, 'TimeOrRetired' => '+13.643s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 2, 'DriverID' => 5, 'ConstructorID' => 2, 'position' => 3, 'grid' => 2, 'laps' => 50, 'TimeOrRetired' => '+18.639s', 'points' => 16.0, 'FastestLap' => true],
@@ -58,7 +58,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 2, 'DriverID' => 11, 'ConstructorID' => 6, 'position' => null, 'grid' => 9, 'laps' => 6, 'TimeOrRetired' => 'DNF - gearbox', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 3, 'DriverID' => 6, 'ConstructorID' => 2, 'position' => 1, 'grid' => 2, 'laps' => 58, 'TimeOrRetired' => '1:20:26.843', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 3, 'DriverID' => 5, 'ConstructorID' => 2, 'position' => 2, 'grid' => 5, 'laps' => 58, 'TimeOrRetired' => '+2.366s', 'points' => 19.0, 'FastestLap' => true],
             ['GrandPrixID' => 3, 'DriverID' => 3, 'ConstructorID' => 4, 'position' => 3, 'grid' => 3, 'laps' => 58, 'TimeOrRetired' => '+5.904s', 'points' => 15.0, 'FastestLap' => false],
@@ -80,7 +80,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 3, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => null, 'grid' => 1, 'laps' => 3, 'TimeOrRetired' => 'DNF', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 4, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => 1, 'grid' => 1, 'laps' => 53, 'TimeOrRetired' => '1:54:23.566', 'points' => 26.0, 'FastestLap' => true],
             ['GrandPrixID' => 4, 'DriverID' => 2, 'ConstructorID' => 1, 'position' => 2, 'grid' => 2, 'laps' => 53, 'TimeOrRetired' => '+12.535s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 4, 'DriverID' => 6, 'ConstructorID' => 2, 'position' => 3, 'grid' => 4, 'laps' => 53, 'TimeOrRetired' => '+20.866s', 'points' => 15.0, 'FastestLap' => false],
@@ -103,7 +103,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 4, 'DriverID' => 18, 'ConstructorID' => 7, 'position' => null, 'grid' => 14, 'laps' => 0, 'TimeOrRetired' => 'DNF', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 5, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => 1, 'grid' => 1, 'laps' => 56, 'TimeOrRetired' => '1:40:52.554', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 5, 'DriverID' => 3, 'ConstructorID' => 4, 'position' => 2, 'grid' => 4, 'laps' => 56, 'TimeOrRetired' => '+13.773s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 5, 'DriverID' => 2, 'ConstructorID' => 1, 'position' => 3, 'grid' => 2, 'laps' => 56, 'TimeOrRetired' => '+19.160s', 'points' => 15.0, 'FastestLap' => false],
@@ -126,7 +126,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 5, 'DriverID' => 16, 'ConstructorID' => 9, 'position' => null, 'grid' => 10, 'laps' => 19, 'TimeOrRetired' => 'DNF', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 6, 'DriverID' => 3, 'ConstructorID' => 4, 'position' => 1, 'grid' => 5, 'laps' => 57, 'TimeOrRetired' => '1:30:49.876', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 6, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => 2, 'grid' => 1, 'laps' => 57, 'TimeOrRetired' => '+7.612s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 6, 'DriverID' => 5, 'ConstructorID' => 2, 'position' => 3, 'grid' => 2, 'laps' => 57, 'TimeOrRetired' => '+9.920s', 'points' => 15.0, 'FastestLap' => false],
@@ -149,7 +149,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 6, 'DriverID' => 17, 'ConstructorID' => 7, 'position' => null, 'grid' => 17, 'laps' => 27, 'TimeOrRetired' => 'DNF', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 7, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => 1, 'grid' => 1, 'laps' => 63, 'TimeOrRetired' => '1:25:25.252', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 7, 'DriverID' => 3, 'ConstructorID' => 4, 'position' => 2, 'grid' => 2, 'laps' => 63, 'TimeOrRetired' => '+0.725s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 7, 'DriverID' => 5, 'ConstructorID' => 2, 'position' => 3, 'grid' => 3, 'laps' => 63, 'TimeOrRetired' => '+7.916s', 'points' => 15.0, 'FastestLap' => false],
@@ -172,7 +172,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 7, 'DriverID' => 18, 'ConstructorID' => 7, 'position' => null, 'grid' => 14, 'laps' => 51, 'TimeOrRetired' => 'DNF', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 8, 'DriverID' => 5, 'ConstructorID' => 2, 'position' => 1, 'grid' => 1, 'laps' => 78, 'TimeOrRetired' => '2:23:15.554', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 8, 'DriverID' => 4, 'ConstructorID' => 4, 'position' => 2, 'grid' => 2, 'laps' => 78, 'TimeOrRetired' => '+7.152s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 8, 'DriverID' => 6, 'ConstructorID' => 2, 'position' => 3, 'grid' => 3, 'laps' => 78, 'TimeOrRetired' => '+7.585s', 'points' => 15.0, 'FastestLap' => false],
@@ -195,7 +195,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 8, 'DriverID' => 13, 'ConstructorID' => 10, 'position' => null, 'grid' => 20, 'laps' => 0, 'TimeOrRetired' => 'DNF', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 9, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => 1, 'grid' => 2, 'laps' => 70, 'TimeOrRetired' => '1:45:47.927', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 9, 'DriverID' => 3, 'ConstructorID' => 4, 'position' => 2, 'grid' => 3, 'laps' => 70, 'TimeOrRetired' => '+3.879s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 9, 'DriverID' => 7, 'ConstructorID' => 3, 'position' => 3, 'grid' => 1, 'laps' => 70, 'TimeOrRetired' => '+4.317s', 'points' => 15.0, 'FastestLap' => false],
@@ -218,7 +218,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 9, 'DriverID' => 17, 'ConstructorID' => 7, 'position' => null, 'grid' => 13, 'laps' => 23, 'TimeOrRetired' => 'DNF', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 10, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => 1, 'grid' => 2, 'laps' => 66, 'TimeOrRetired' => '1:28:20.227', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 10, 'DriverID' => 3, 'ConstructorID' => 4, 'position' => 2, 'grid' => 1, 'laps' => 66, 'TimeOrRetired' => '+2.219s', 'points' => 19.0, 'FastestLap' => true],
             ['GrandPrixID' => 10, 'DriverID' => 8, 'ConstructorID' => 3, 'position' => 3, 'grid' => 3, 'laps' => 66, 'TimeOrRetired' => '+17.790s', 'points' => 15.0, 'FastestLap' => false],
@@ -241,7 +241,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 10, 'DriverID' => 17, 'ConstructorID' => 7, 'position' => 20, 'grid' => 19, 'laps' => 64, 'TimeOrRetired' => '+2 laps', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 11, 'DriverID' => 7, 'ConstructorID' => 3, 'position' => 1, 'grid' => 3, 'laps' => 71, 'TimeOrRetired' => '1:24:22.798', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 11, 'DriverID' => 4, 'ConstructorID' => 4, 'position' => 2, 'grid' => 7, 'laps' => 71, 'TimeOrRetired' => '+1.906s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 11, 'DriverID' => 6, 'ConstructorID' => 2, 'position' => 3, 'grid' => 4, 'laps' => 71, 'TimeOrRetired' => '+4.533s', 'points' => 15.0, 'FastestLap' => false],
@@ -264,7 +264,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 11, 'DriverID' => 3, 'ConstructorID' => 4, 'position' => 20, 'grid' => 2, 'laps' => 64, 'TimeOrRetired' => '+7 laps', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 12, 'DriverID' => 8, 'ConstructorID' => 3, 'position' => 1, 'grid' => 2, 'laps' => 52, 'TimeOrRetired' => '1:22:27.059', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 12, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => 2, 'grid' => 4, 'laps' => 52, 'TimeOrRetired' => '+1.465s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 12, 'DriverID' => 3, 'ConstructorID' => 4, 'position' => 3, 'grid' => 3, 'laps' => 52, 'TimeOrRetired' => '+7.547s', 'points' => 15.0, 'FastestLap' => false],
@@ -287,7 +287,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 12, 'DriverID' => 11, 'ConstructorID' => 6, 'position' => null, 'grid' => 19, 'laps' => 0, 'TimeOrRetired' => 'DNS', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 13, 'DriverID' => 4, 'ConstructorID' => 4, 'position' => 1, 'grid' => 2, 'laps' => 70, 'TimeOrRetired' => '1:38:01.989', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 13, 'DriverID' => 3, 'ConstructorID' => 4, 'position' => 2, 'grid' => 1, 'laps' => 70, 'TimeOrRetired' => '+2.141s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 13, 'DriverID' => 8, 'ConstructorID' => 3, 'position' => 3, 'grid' => 5, 'laps' => 70, 'TimeOrRetired' => '+14.880s', 'points' => 15.0, 'FastestLap' => false],
@@ -310,7 +310,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 13, 'DriverID' => 11, 'ConstructorID' => 6, 'position' => null, 'grid' => 20, 'laps' => 33, 'TimeOrRetired' => 'DNF', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 14, 'DriverID' => 7, 'ConstructorID' => 3, 'position' => null, 'grid' => 6, 'laps' => 44, 'TimeOrRetired' => '1:19:57.040', 'points' => 0.0, 'FastestLap' => false],
             ['GrandPrixID' => 14, 'DriverID' => 8, 'ConstructorID' => 3, 'position' => 1, 'grid' => 3, 'laps' => 44, 'TimeOrRetired' => '+0.526s', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 14, 'DriverID' => 4, 'ConstructorID' => 4, 'position' => 2, 'grid' => 5, 'laps' => 44, 'TimeOrRetired' => '+1.173s', 'points' => 18.0, 'FastestLap' => true],
@@ -333,7 +333,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 14, 'DriverID' => 15, 'ConstructorID' => 9, 'position' => null, 'grid' => 19, 'laps' => 5, 'TimeOrRetired' => 'DNF', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 15, 'DriverID' => 3, 'ConstructorID' => 4, 'position' => 1, 'grid' => 1, 'laps' => 72, 'TimeOrRetired' => '1:30:45.519', 'points' => 26.0, 'FastestLap' => true],
             ['GrandPrixID' => 15, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => 2, 'grid' => 2, 'laps' => 72, 'TimeOrRetired' => '+22.896s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 15, 'DriverID' => 5, 'ConstructorID' => 2, 'position' => 3, 'grid' => 6, 'laps' => 72, 'TimeOrRetired' => '+25.439s', 'points' => 15.0, 'FastestLap' => false],
@@ -356,7 +356,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 15, 'DriverID' => 15, 'ConstructorID' => 9, 'position' => null, 'grid' => 17, 'laps' => 70, 'TimeOrRetired' => '+2 laps', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 16, 'DriverID' => 5, 'ConstructorID' => 2, 'position' => 1, 'grid' => 4, 'laps' => 53, 'TimeOrRetired' => '1:14:40.727', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 16, 'DriverID' => 4, 'ConstructorID' => 4, 'position' => 2, 'grid' => 2, 'laps' => 53, 'TimeOrRetired' => '+2.664s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 16, 'DriverID' => 3, 'ConstructorID' => 4, 'position' => 3, 'grid' => 1, 'laps' => 53, 'TimeOrRetired' => '+6.153s', 'points' => 16.0, 'FastestLap' => true],
@@ -379,7 +379,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 16, 'DriverID' => 19, 'ConstructorID' => 8, 'position' => null, 'grid' => 16, 'laps' => 7, 'TimeOrRetired' => 'DNF', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 17, 'DriverID' => 4, 'ConstructorID' => 4, 'position' => 1, 'grid' => 2, 'laps' => 51, 'TimeOrRetired' => '1:32:58.007', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 17, 'DriverID' => 5, 'ConstructorID' => 2, 'position' => 2, 'grid' => 1, 'laps' => 51, 'TimeOrRetired' => '+10.910s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 17, 'DriverID' => 7, 'ConstructorID' => 3, 'position' => 3, 'grid' => 5, 'laps' => 51, 'TimeOrRetired' => '+31.328s', 'points' => 15.0, 'FastestLap' => false],
@@ -402,7 +402,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 17, 'DriverID' => 19, 'ConstructorID' => 8, 'position' => null, 'grid' => 11, 'laps' => 14, 'TimeOrRetired' => 'DNF', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 18, 'DriverID' => 3, 'ConstructorID' => 4, 'position' => 1, 'grid' => 1, 'laps' => 62, 'TimeOrRetired' => '1:40:52.571', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 18, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => 2, 'grid' => 2, 'laps' => 62, 'TimeOrRetired' => '+20.945s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 18, 'DriverID' => 4, 'ConstructorID' => 4, 'position' => 3, 'grid' => 5, 'laps' => 62, 'TimeOrRetired' => '+41.823s', 'points' => 15.0, 'FastestLap' => false],
@@ -425,7 +425,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 18, 'DriverID' => 18, 'ConstructorID' => 7, 'position' => null, 'grid' => 11, 'laps' => 15, 'TimeOrRetired' => 'DNF', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 19, 'DriverID' => 5, 'ConstructorID' => 2, 'position' => 1, 'grid' => 4, 'laps' => 56, 'TimeOrRetired' => '1:35:09.639', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 19, 'DriverID' => 6, 'ConstructorID' => 2, 'position' => 2, 'grid' => 3, 'laps' => 56, 'TimeOrRetired' => '+8.562s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 19, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => 3, 'grid' => 2, 'laps' => 56, 'TimeOrRetired' => '+19.412s', 'points' => 15.0, 'FastestLap' => false],
@@ -448,7 +448,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 19, 'DriverID' => 8, 'ConstructorID' => 3, 'position' => null, 'grid' => 17, 'laps' => 1, 'TimeOrRetired' => 'DNF', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 20, 'DriverID' => 6, 'ConstructorID' => 2, 'position' => 1, 'grid' => 1, 'laps' => 71, 'TimeOrRetired' => '1:40:55.800', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 20, 'DriverID' => 3, 'ConstructorID' => 4, 'position' => 2, 'grid' => 3, 'laps' => 71, 'TimeOrRetired' => '+4.705s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 20, 'DriverID' => 5, 'ConstructorID' => 2, 'position' => 3, 'grid' => 4, 'laps' => 71, 'TimeOrRetired' => '+34.387s', 'points' => 16.0, 'FastestLap' => true],
@@ -471,7 +471,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 20, 'DriverID' => 19, 'ConstructorID' => 8, 'position' => null, 'grid' => 11, 'laps' => 0, 'TimeOrRetired' => 'DNF', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 21, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => 1, 'grid' => 17, 'laps' => 69, 'TimeOrRetired' => '2:06:54.430', 'points' => 26.0, 'FastestLap' => true],
             ['GrandPrixID' => 21, 'DriverID' => 12, 'ConstructorID' => 6, 'position' => 2, 'grid' => 4, 'laps' => 69, 'TimeOrRetired' => '+19.477s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 21, 'DriverID' => 11, 'ConstructorID' => 6, 'position' => 3, 'grid' => 13, 'laps' => 69, 'TimeOrRetired' => '+22.532s', 'points' => 15.0, 'FastestLap' => false],
@@ -494,7 +494,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 21, 'DriverID' => 14, 'ConstructorID' => 10, 'position' => null, 'grid' => 18, 'laps' => 0, 'TimeOrRetired' => 'DSQ', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 22, 'DriverID' => 7, 'ConstructorID' => 3, 'position' => 1, 'grid' => 1, 'laps' => 50, 'TimeOrRetired' => '1:22:05.969', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 22, 'DriverID' => 8, 'ConstructorID' => 3, 'position' => 2, 'grid' => 10, 'laps' => 50, 'TimeOrRetired' => '+7.313s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 22, 'DriverID' => 6, 'ConstructorID' => 2, 'position' => 3, 'grid' => 2, 'laps' => 50, 'TimeOrRetired' => '+11.906s', 'points' => 15.0, 'FastestLap' => false],
@@ -517,7 +517,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 22, 'DriverID' => 11, 'ConstructorID' => 6, 'position' => null, 'grid' => 3, 'laps' => 15, 'TimeOrRetired' => 'DNF', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 23, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => 1, 'grid' => 2, 'laps' => 57, 'TimeOrRetired' => '1:31:05.323', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 23, 'DriverID' => 5, 'ConstructorID' => 2, 'position' => 2, 'grid' => 5, 'laps' => 57, 'TimeOrRetired' => '+6.031s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 23, 'DriverID' => 4, 'ConstructorID' => 4, 'position' => 3, 'grid' => 4, 'laps' => 57, 'TimeOrRetired' => '+6.819s', 'points' => 15.0, 'FastestLap' => false],
@@ -540,7 +540,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 23, 'DriverID' => 12, 'ConstructorID' => 6, 'position' => null, 'grid' => 20, 'laps' => 0, 'TimeOrRetired' => 'DNF', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
             ['GrandPrixID' => 24, 'DriverID' => 3, 'ConstructorID' => 4, 'position' => 1, 'grid' => 1, 'laps' => 58, 'TimeOrRetired' => '1:26:33.291', 'points' => 25.0, 'FastestLap' => false],
             ['GrandPrixID' => 24, 'DriverID' => 6, 'ConstructorID' => 2, 'position' => 2, 'grid' => 3, 'laps' => 58, 'TimeOrRetired' => '+5.832s', 'points' => 18.0, 'FastestLap' => false],
             ['GrandPrixID' => 24, 'DriverID' => 5, 'ConstructorID' => 2, 'position' => 3, 'grid' => 19, 'laps' => 58, 'TimeOrRetired' => '+31.928s', 'points' => 15.0, 'FastestLap' => false],
@@ -563,7 +563,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 24, 'DriverID' => 2, 'ConstructorID' => 1, 'position' => null, 'grid' => 10, 'laps' => 0, 'TimeOrRetired' => 'DNF', 'points' => 0.0, 'FastestLap' => false],
         ]);
 
-        DB::table('race_results')->insert([
+        DB::table('race_result')->insert([
 
             ['GrandPrixID' => 5, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => 1, 'grid' => 4, 'TimeOrRetired' => '32:04.660', 'points' => 8, 'FastestLap' => false, 'GpOrSprint' => false],
             ['GrandPrixID' => 5, 'DriverID' => 8, 'ConstructorID' => 3, 'position' => 2, 'grid' => 2, 'TimeOrRetired' => '+13.043s', 'points' => 7, 'FastestLap' => false, 'GpOrSprint' => false],
@@ -586,7 +586,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 5, 'DriverID' => 14, 'ConstructorID' => 10, 'position' => 19, 'grid' => 13, 'TimeOrRetired' => '+49.630s', 'points' => 0, 'FastestLap' => false, 'GpOrSprint' => false],
             ['GrandPrixID' => 5, 'DriverID' => 10, 'ConstructorID' => 5, 'position' => 20, 'grid' => 3, 'TimeOrRetired' => 'DNF', 'points' => 0, 'FastestLap' => false, 'GpOrSprint' => false],
  ]);
-         DB::table('race_results')->insert([
+         DB::table('race_result')->insert([
 
             ['GrandPrixID' => 6, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => 1, 'grid' => 1, 'TimeOrRetired' => '31:31.383', 'points' => 8, 'FastestLap' => false, 'GpOrSprint' => false],
             ['GrandPrixID' => 6, 'DriverID' => 5, 'ConstructorID' => 2, 'position' => 2, 'grid' => 2, 'TimeOrRetired' => '+3.371s', 'points' => 7, 'FastestLap' => false, 'GpOrSprint' => false],
@@ -610,7 +610,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 6, 'DriverID' => 3, 'ConstructorID' => 4, 'position' => null, 'grid' => 9, 'TimeOrRetired' => 'DNF', 'points' => 0, 'FastestLap' => false, 'GpOrSprint' => false],
  ]);
 
-                    DB::table('race_results')->insert([
+                    DB::table('race_result')->insert([
 
             ['GrandPrixID' => 11, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => 1, 'grid' => 1, 'TimeOrRetired' => '26:41.389', 'points' => 8, 'FastestLap' => false, 'GpOrSprint' => false],
             ['GrandPrixID' => 11, 'DriverID' => 4, 'ConstructorID' => 4, 'position' => 2, 'grid' => 3, 'TimeOrRetired' => '+4.616s', 'points' => 7, 'FastestLap' => false, 'GpOrSprint' => false],
@@ -634,7 +634,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 11, 'DriverID' => 15, 'ConstructorID' => 9, 'position' => 20, 'grid' => 19, 'TimeOrRetired' => '+53.143s', 'points' => 0, 'FastestLap' => false, 'GpOrSprint' => false],
  ]);
 
-                    DB::table('race_results')->insert([
+                    DB::table('race_result')->insert([
 
             ['GrandPrixID' => 19, 'DriverID' => 1, 'ConstructorID' => 1, 'position' => 1, 'grid' => 1, 'TimeOrRetired' => '31:06.146', 'points' => 8, 'FastestLap' => false, 'GpOrSprint' => false],
             ['GrandPrixID' => 19, 'DriverID' => 6, 'ConstructorID' => 2, 'position' => 2, 'grid' => 5, 'TimeOrRetired' => '+3.882s', 'points' => 7, 'FastestLap' => false, 'GpOrSprint' => false],
@@ -658,7 +658,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 19, 'DriverID' => 16, 'ConstructorID' => 9, 'position' => 20, 'grid' => 18, 'TimeOrRetired' => '+54.476s', 'points' => 0, 'FastestLap' => false, 'GpOrSprint' => false],
  ]);
 
-                    DB::table('race_results')->insert([
+                    DB::table('race_result')->insert([
 
             ['GrandPrixID' => 21, 'DriverID' => 3, 'ConstructorID' => 4, 'position' => 1, 'grid' => 2, 'TimeOrRetired' => '29:46.045', 'points' => 8, 'FastestLap' => false, 'GpOrSprint' => false],
             ['GrandPrixID' => 21, 'DriverID' => 4, 'ConstructorID' => 4, 'position' => 2, 'grid' => 1, 'TimeOrRetired' => '+0.593s', 'points' => 7, 'FastestLap' => false, 'GpOrSprint' => false],
@@ -682,7 +682,7 @@ class RaceResultSeeder extends Seeder
             ['GrandPrixID' => 21, 'DriverID' => 14, 'ConstructorID' => 10, 'position' => 20, 'grid' => 12, 'TimeOrRetired' => 'DNF', 'points' => 0, 'FastestLap' => false, 'GpOrSprint' => false],
  ]);
 
-                    DB::table('race_results')->insert([
+                    DB::table('race_result')->insert([
 
             ['GrandPrixID' => 23, 'DriverID' => 4, 'ConstructorID' => 4, 'position' => 1, 'grid' => 3, 'TimeOrRetired' => '27:03.010', 'points' => 8, 'FastestLap' => false, 'GpOrSprint' => false],
             ['GrandPrixID' => 23, 'DriverID' => 3, 'ConstructorID' => 4, 'position' => 2, 'grid' => 1, 'TimeOrRetired' => '+0.136s', 'points' => 7, 'FastestLap' => false, 'GpOrSprint' => false],

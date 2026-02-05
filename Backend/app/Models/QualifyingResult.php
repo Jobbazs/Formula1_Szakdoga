@@ -10,7 +10,9 @@ class QualifyingResult extends Model
     /** @use HasFactory<\Database\Factories\QualifyingResultFactory> */
     use HasFactory;
 
-            protected $primaryKey = 'QualifyingID';
+    protected $primaryKey = 'QualifyingID';
+
+    protected $table = 'qualifying_result';
 
 
      protected $fillable = [

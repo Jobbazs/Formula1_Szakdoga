@@ -11,9 +11,9 @@ class QualifyingResultController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+            public function index()
     {
-        //
+        return QualifyingResult::all();
     }
 
     /**
@@ -21,30 +21,42 @@ class QualifyingResultController extends Controller
      */
     public function store(StoreQualifyingResultRequest $request)
     {
-        //
+        $qualifying_result = new QualifyingResult();
+        $qualifying_result->fill($request->all());
+        $qualifying_result->save();
+
+        return response()->json($qualifying_result, 201);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(QualifyingResult $qualifyingResult)
+    public function show($id)
     {
-        //
+        return QualifyingResult::find($id);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateQualifyingResultRequest $request, QualifyingResult $qualifyingResult)
-    {
-        //
-    }
+   public function update(UpdateQualifyingResultRequest $request, $id)
+{
+    $qualifying_result = QualifyingResult::find($id);
+    
+    $qualifying_result->fill($request->all());
+    $qualifying_result->save();
+
+    return response()->json($qualifying_result, 200);
+}
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(QualifyingResult $qualifyingResult)
+    public function destroy(QualifyingResult $qualifying_result, $id)
     {
-        //
+        $qualifying_result = QualifyingResult::find($id);
+        $qualifying_result->delete();
+
+        return response()->json(null, 204);
     }
 }
