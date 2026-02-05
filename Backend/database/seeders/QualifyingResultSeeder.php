@@ -45,7 +45,7 @@ class QualifyingResultSeeder extends Seeder
                 ];
             }
 
-            DB::table('qualifyingresults')->insert($results);
+            DB::table('qualifying_result')->insert($results);
         }
     }
 }
