@@ -10,7 +10,9 @@ class Circuits extends Model
     /** @use HasFactory<\Database\Factories\CircuitsFactory> */
     use HasFactory;
 
-      protected $fillable = [
+    protected $primaryKey = 'CircuitID';
+    
+    protected $fillable = [
         'CircuitID', 
         'Name', 
         'DriverID', 
@@ -22,6 +24,8 @@ class Circuits extends Model
         'Image ',
        
     ];
+
+    
     
     public function grandPrix()
 {
