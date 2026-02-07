@@ -8,10 +8,10 @@ const Navbar: React.FC = () => {
         <div className="navbar-logo">F1 STATS</div>
         <div className="navbar-links">
           <Link className="navbar-link" to="/">Home</Link>
-          <Link className="navbar-link" to="/grand-prix">Grand Prix</Link>
-          <Link className="navbar-link" to="/drivers">Drivers</Link>
-          <Link className="navbar-link" to="/teams">Teams</Link>
-          <Link className="navbar-link" to="/circuits">Circuits</Link>
+          <Link className="navbar-link" to="/grand_prix">Grand Prix</Link>
+          <Link className="navbar-link" to="/driver">Drivers</Link>
+          <Link className="navbar-link" to="/team">Teams</Link>
+          <Link className="navbar-link" to="/circuit">Circuits</Link>
           <Link className="navbar-link" to="/login">Login</Link>
         </div>
       </div>
