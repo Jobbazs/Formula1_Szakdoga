@@ -1,6 +1,6 @@
 <?php
 
-
+use Illuminate\Container\Attributes\DB;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -33,6 +33,13 @@ return new class extends Migration
                   ->nullOnDelete()
                   ->cascadeOnUpdate();
         });
+
+        // 1. Év nem lehet a jövőben
+        DB::statement('ALTER TABLE grand_prix ADD CONSTRAINT chk_year_not_future CHECK (Year <= YEAR(CURDATE()))');
+        
+        // 2. Név nem lehet üres
+        DB::statement('ALTER TABLE grand_prix ADD CONSTRAINT chk_name_not_empty CHECK (CHAR_LENGTH(TRIM(Name)) > 0)');
+    
     }
   
     /**
@@ -40,6 +47,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('grand_prixes');
+        Schema::dropIfExists('grandprix');
     }
 };
