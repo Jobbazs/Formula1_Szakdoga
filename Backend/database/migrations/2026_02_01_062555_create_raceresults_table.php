@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Container\Attributes\DB;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -42,6 +43,24 @@ return new class extends Migration
                   ->restrictOnDelete()
                   ->cascadeOnUpdate();
         });
+
+                // ===== MEGSZORÍTÁSOK =====
+        
+        // 1. Pozíció 1 és 20 között lehet
+        DB::statement('ALTER TABLE race_results ADD CONSTRAINT chk_position_range CHECK (Position BETWEEN 1 AND 20 OR Position IS NULL)');
+        
+        // 2. Pontok 0 és 26 között (25 + 1 leggyorsabb kör)
+        DB::statement('ALTER TABLE race_results ADD CONSTRAINT chk_points_range CHECK (Points BETWEEN 0 AND 26)');
+        
+        // 3. Csak a befutók kaphatnak pontot
+        DB::statement('ALTER TABLE race_results ADD CONSTRAINT chk_points_only_finished CHECK (Status = "Finished" OR Points = 0)');
+        
+        // 4. 1. helyezett nem lehet 0 pont (ha befutott)
+        DB::statement('ALTER TABLE race_results ADD CONSTRAINT chk_winner_points CHECK (Position != 1 OR Points > 0)');
+        
+        // 5. Egyedi pozíció versenyen belül (nem lehet két 1. helyezett)
+        DB::statement('ALTER TABLE race_results ADD CONSTRAINT unique_position_per_race UNIQUE (GrandPrixID, Position)');
+   
     }
 
     /**

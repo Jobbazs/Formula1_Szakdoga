@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Container\Attributes\DB;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,11 +17,16 @@ return new class extends Migration
             $table->string('Name', 150);
             $table->string('Location', 100)->nullable();
             $table->string('Nation', 50)->nullable();
+            $table->integer('Length')->nullable();
             $table->year('FirstGrandPrix')->nullable();
             $table->string('RecordLapTime', 20)->nullable();
             $table->string('RecordDriver', 100)->nullable();
             $table->string('Image', 255)->default('');
         });
+
+        //Circuit hossza pozitív
+        DB::statement('ALTER TABLE circuits ADD CONSTRAINT chk_circuit_length CHECK (Length > 0)');
+
     }
 
     /**

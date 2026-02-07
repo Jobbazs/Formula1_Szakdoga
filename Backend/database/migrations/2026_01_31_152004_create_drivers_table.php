@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Container\Attributes\DB;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -26,6 +27,10 @@ return new class extends Migration
                   ->nullOnDelete()
                   ->cascadeOnUpdate();
         });
+
+        //18+ életkor
+        DB::statement('ALTER TABLE drivers ADD CONSTRAINT chk_driver_age CHECK (TIMESTAMPDIFF(YEAR, DateOfBirth, CURDATE()) >= 18)');
+
     }
     
     /**
