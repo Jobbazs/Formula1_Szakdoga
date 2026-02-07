@@ -7,21 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Driver extends Model
 {
-    /** @use HasFactory<\Database\Factories\DriverFactory> */
     use HasFactory;
 
-        protected $primaryKey = 'DriverID';
+    protected $primaryKey = 'DriverID';
+    public $timestamps = false; 
 
     protected $fillable = [
         'DriverID', 
         'Name', 
         'ConstructorID', 
         'Nationality',
-        'BirthDate ',
-        'Biography ',
-        'Image ',
-        
-     ];
+        'BirthDate', 
+        'Biography', 
+        'Image', 
+    ];
 
     public function constructor()
     {
@@ -33,10 +32,11 @@ class Driver extends Model
         return $this->hasMany(GrandPrix::class, 'WinnerDriverID', 'DriverID');
     }
 
+    
     public function teamHistory()
     {
-        return $this->belongsToMany(Constructor::class, 'teams_drivers', 'Drivers_Id', 'Teams_Id')
-            ->withPivot('First_Year', 'End_Year')
+        return $this->belongsToMany(Constructor::class, 'teams_drivers', 'DriverID', 'ConstructorID')
+            ->withPivot('FirstYear', 'EndYear')
             ->withTimestamps();
     }
 
@@ -47,6 +47,6 @@ class Driver extends Model
 
     public function raceResults()
     {
-        return $this->hasMany(Raceresult::class, 'DriverID', 'DriverID');
+        return $this->hasMany(RaceResult::class, 'DriverID', 'DriverID'); 
     }
 }

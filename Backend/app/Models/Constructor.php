@@ -7,45 +7,44 @@ use Illuminate\Database\Eloquent\Model;
 
 class Constructor extends Model
 {
-    /** @use HasFactory<\Database\Factories\ConstructorFactory> */
     use HasFactory;
     
     protected $primaryKey = 'ConstructorID';
+    public $timestamps = false; 
     
-     protected $fillable = [
+    protected $fillable = [
         'ConstructorID', 
         'Name', 
-        'TeamPrincipal', 
+        'Nationality', 
         'FoundedYear',
-        'Podiums ',
-        'Wins ',
-        'PolePositions ',
-        'WorldChampionships ',
-        'FirstGrandPrix ',
-        'Nation ',
-        'Image ',
-        
+        'TeamPrincipal',
+        'Wins', 
+        'PolePositions', 
+        'Podiums', 
+        'WorldChampionships', 
+        'History',
+        'Image', 
     ];
 
     public function drivers()
-{
-    return $this->hasMany(Driver::class, 'ConstructorID', 'ConstructorID');
-}
+    {
+        return $this->hasMany(Driver::class, 'ConstructorID', 'ConstructorID');
+    }
 
-public function driverHistory()
-{
-    return $this->belongsToMany(Driver::class, 'teams_drivers', 'Teams_Id', 'Drivers_Id')
-                ->withPivot('First_Year', 'End_Year')
-                ->withTimestamps();
-}
+    public function driverHistory()
+    {
+        return $this->belongsToMany(Driver::class, 'teams_drivers', 'ConstructorID', 'DriverID')
+            ->withPivot('FirstYear', 'EndYear')
+            ->withTimestamps();
+    }
 
-public function qualifyingResults()
-{
-    return $this->hasMany(QualifyingResult::class, 'ConstructorID', 'ConstructorID');
-}
+    public function qualifyingResults()
+    {
+        return $this->hasMany(QualifyingResult::class, 'ConstructorID', 'ConstructorID');
+    }
 
-public function raceResults()
-{
-    return $this->hasMany(Raceresult::class, 'ConstructorID', 'ConstructorID');
-}
+    public function raceResults()
+    {
+        return $this->hasMany(RaceResult::class, 'ConstructorID', 'ConstructorID'); 
+    }
 }

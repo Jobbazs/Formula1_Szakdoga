@@ -14,11 +14,11 @@ return new class extends Migration
             $table->string('Name', 150)->unique();
             $table->string('Nationality', 50);
             $table->year('FoundedYear')->nullable();
-            $table->string('TeamPrincipal', 100)->nullable(); // ✅ Hozzáadva
-            $table->unsignedInteger('Wins')->default(0); // ✅ Hozzáadva
-            $table->unsignedInteger('PolePositions')->default(0); // ✅ Hozzáadva
-            $table->unsignedInteger('Podiums')->default(0); // ✅ Hozzáadva
-            $table->unsignedTinyInteger('WorldChampionships')->default(0); // ✅ Hozzáadva
+            $table->string('TeamPrincipal', 100)->nullable(); 
+            $table->unsignedInteger('Wins')->default(0); 
+            $table->unsignedInteger('PolePositions')->default(0); 
+            $table->unsignedInteger('Podiums')->default(0); 
+            $table->unsignedTinyInteger('WorldChampionships')->default(0); 
             $table->text('History')->default('');
             $table->string('Image', 255)->default('');
             $table->timestamps();
