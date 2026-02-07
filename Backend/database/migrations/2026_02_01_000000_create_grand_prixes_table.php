@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Container\Attributes\DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -35,10 +35,10 @@ return new class extends Migration
         });
 
         // 1. Év nem lehet a jövőben
-        DB::statement('ALTER TABLE grand_prix ADD CONSTRAINT chk_year_not_future CHECK (Year <= YEAR(CURDATE()))');
+        DB::statement('ALTER TABLE grandprix ADD CONSTRAINT chk_year_not_future CHECK (Year <= 2026)');
         
         // 2. Név nem lehet üres
-        DB::statement('ALTER TABLE grand_prix ADD CONSTRAINT chk_name_not_empty CHECK (CHAR_LENGTH(TRIM(Name)) > 0)');
+        DB::statement('ALTER TABLE grandprix ADD CONSTRAINT chk_name_not_empty CHECK (CHAR_LENGTH(TRIM(Name)) > 0)');
     
     }
   
