@@ -1,62 +1,69 @@
 <?php
 
+
+// full blank az oldal
 namespace App\Http\Controllers;
 
-use App\Models\Raceresult;
+use App\Models\RaceResult;
 use App\Http\Requests\StoreRaceresultRequest;
 use App\Http\Requests\UpdateRaceresultRequest;
+use Illuminate\Container\Attributes\Log;
+use Psy\Command\DumpCommand;
 
 class RaceresultController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-        public function index()
+    public function index()
     {
-        return RaceResult::all();
+        // dump("Valami");
+         return RaceResult::results();
+        //    return response()->json(null, 204);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreRaceResultRequest $request)
+    public function store(StoreRaceresultRequest $request)
     {
         $race_result = new RaceResult();
         $race_result->fill($request->all());
         $race_result->save();
-
         return response()->json($race_result, 201);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show($id)
     {
         return RaceResult::find($id);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-   public function update(UpdateRaceResultRequest $request, $id)
-{
-    $race_result = RaceResult::find($id);
-    
-    $race_result->fill($request->all());
-    $race_result->save();
+    public function update(UpdateRaceresultRequest $request, $id)
+    {
+        $race_result = RaceResult::find($id);
+        $race_result->fill($request->all());
+        $race_result->save();
+        return response()->json($race_result, 200);
+    }
 
-    return response()->json($race_result, 200);
-}
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(RaceResult $race_result, $id)
+    public function destroy($id)
     {
         $race_result = RaceResult::find($id);
         $race_result->delete();
-
         return response()->json(null, 204);
     }
-}
+
+    public function results()
+    {        $results = RaceResult::selectRaw('DriverID, SUM(Points) as TotalPoints')
+            ->groupBy('DriverID')
+            ->orderByDesc('TotalPoints')
+           ->with('driver.constructor')
+           ->get()
+           ->map(function ($result, $index) {
+               return [
+                   'DriverID' => $result->DriverID,
+                   'Name' => $result->driver->Name,
+                    'Nationality' => $result->driver->Nationality,
+                    'Image' => $result->driver->Image,                    'ConstructorName' => $result->driver->constructor?->Name,
+                   'Points' => $result->TotalPoints,                    'Position' => $index + 1,
+                ];
+          });
+
+        return response()->json($results);
+     }
+ }
+ 

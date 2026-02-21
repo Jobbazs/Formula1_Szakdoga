@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,6 +15,7 @@ class RaceResult extends Model
     protected $table = 'race_result';
 
 
+    
       protected $fillable = [
         'ResultID', 
         'GrandPrixID', 

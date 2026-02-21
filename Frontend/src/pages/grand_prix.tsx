@@ -11,7 +11,7 @@ interface GrandPrix {
   Image?: string;
 }
 
-export function GrandPrixPage() {
+function GrandPrixPage() {  
   const [grand_prix, setGrandPrix] = useState<GrandPrix[]>([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -62,3 +62,5 @@ export function GrandPrixPage() {
     </div>
   );
 }
+
+export default GrandPrixPage;  
