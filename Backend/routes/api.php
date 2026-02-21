@@ -6,7 +6,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CircuitsController;
 use App\Http\Controllers\ConstructorController;
-use App\Http\Controllers\DriverController;
+use App\Http\Controllers\DriverController;  
 use App\Http\Controllers\GrandPrixController;
 use App\Http\Controllers\QualifyingResultController;
 use App\Http\Controllers\RaceresultController;
@@ -55,11 +55,12 @@ Route::put('/qualifying_result/{id}', [QualifyingResultController::class, 'updat
 Route::delete('/qualifying_result/{id}', [QualifyingResultController::class, 'destroy']);
 
 //RaceResult
-Route::get('/race_result', [RaceresultController::class, 'index']);
-Route::get('/race_result/{id}', [RaceResultController::class, 'show']);
-Route::post('/race_result', [RaceResultController::class, 'store']);
-Route::put('/race_result/{id}', [RaceResultController::class, 'update']);
-Route::delete('/race_result/{id}', [RaceResultController::class, 'destroy']);
+// Route::get('/race_result', [RaceresultController::class, 'index']);
+// Route::get('/race_result', [RaceresultController::class, 'index']);
+// Route::get('/race_result/{id}', [RaceresultController::class, 'show']);
+// Route::post('/race_result', [RaceresultController::class, 'store']);
+// Route::put('/race_result/{id}', [RaceresultController::class, 'update']);
+// Route::delete('/race_result/{id}', [RaceresultController::class, 'destroy']);
 
 //TeamDriver
 Route::get('/team_driver', [TeamDriverController::class, 'index']);
