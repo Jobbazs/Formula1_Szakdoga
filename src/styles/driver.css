@@ -1,0 +1,76 @@
+.drivers-page {
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: #15151e;
+}
+
+.drivers-header {
+  margin-bottom: 2rem;
+}
+
+.drivers-header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.drivers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.driver-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+  background: linear-gradient(135deg, #1e1e2e 0%, #2a2a3e 100%);
+  color: white;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-bottom: 4px solid #e10600;
+}
+
+.driver-card:hover {
+  transform: scale(1.05);
+}
+
+.driver-card img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 85%;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+.driver-info-box {
+  position: relative;
+  z-index: 1;
+  padding: 1rem 1.2rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+}
+
+.driver-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.driver-info {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.5rem;
+  color: white;
+}
