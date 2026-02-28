@@ -1,54 +1,51 @@
-import Max from '../forrasok/max-verstappen.avif'
-import Sergio from '../forrasok/perez.avif'
-import Norris from '../forrasok/norris.avif'
-import Oscar from '../forrasok/Oscar.avif'
-import Charles from '../forrasok/charles.avif'
-import Carlos from '../forrasok/Carlos.jpg'
-import George from '../forrasok/George.avif'
-import Lewis from '../forrasok/hamilton.avif'
-import Alonso from '../forrasok/alonso.avif'
-import Stroll from '../forrasok/stroll.avif'
-import Gasly from '../forrasok/gasly.avif'
-import Ocon from '../forrasok/ocon.avif'
-import Kevin from '../forrasok/magnussen.avif'
-import Hulkemberg from '../forrasok/hulkenberg.avif'
-import Zhou from '../forrasok/zhou.avif'
-import Bottas from '../forrasok/bottas.avif'
-import Sargeant from '../forrasok/sargeant.avif'
-import Albon from '../forrasok/albon.avif'
-import Tsunoda from '../forrasok/tsunoda.avif'
-import Ricardo from '../forrasok/ricardo.png'
-import Lawson from '../forrasok/lawson.avif'
-import Colapinto from '../forrasok/colapinto.avif' 
-import Bearman from '../forrasok/OIP.jpg'
-import Doohan from '../forrasok/doohan.avif'
+import Max from "../forrasok/Drivers/max_verstappen.png";
+import Sergio from "../forrasok/Drivers/sergio_perez.png";
+import Norris from "../forrasok/Drivers/lando_norris.png";
+import Oscar from "../forrasok/Drivers/oscar_piastri.png";
+import Charles from "../forrasok/Drivers/charles_leclerc.png";
+import Carlos from "../forrasok/Drivers/carlos_sainz.png";
+import George from "../forrasok/Drivers/george_russel.png";
+import Lewis from "../forrasok/Drivers/lewis_hamilton.png";
+import Alonso from "../forrasok/Drivers/fernando_alonso.png";
+import Stroll from "../forrasok/Drivers/lance_stroll.png";
+import Gasly from "../forrasok/Drivers/pierre_gasly.png";
+import Ocon from "../forrasok/Drivers/esteban_ocon.png";
+import Kevin from "../forrasok/Drivers/kevin_magnussen.png";
+import Hulkemberg from "../forrasok/Drivers/nico_hulkenberg.png";
+import Zhou from "../forrasok/Drivers/zhou_guanyu.png";
+import Bottas from "../forrasok/Drivers/valtteri_bottas.png";
+import Sargeant from "../forrasok/Drivers/logan_sargeant.png";
+import Albon from "../forrasok/Drivers/alex_albon.png";
+import Tsunoda from "../forrasok/Drivers/yuki_tsunoda.png";
+import Ricardo from "../forrasok/Drivers/daniel_riccardo.png";
+import Lawson from "../forrasok/Drivers/liam_lawson.webp";
+import Colapinto from "../forrasok/Drivers/franco_colapinto.webp";
+import Bearman from "../forrasok/Drivers/oliver_bearman.webp";
+import Doohan from "../forrasok/Drivers/jack_doohan.webp";
 
 export const imageMap = {
-    "Max Verstappen" : Max,
-    "Sergio Perez" : Sergio,
-    "Lando Norris" : Norris,
-    "Oscar Piastri" : Oscar,
-    "Charles Leclerc" : Charles,
-    "Carlos Sainz" : Carlos,
-    "George Russel" : George,
-    "Lewis Hamilton": Lewis,
-    "Fernando Alonso" : Alonso,
-    "Lance Stroll" : Stroll,
-    "Pierre Gasly" : Gasly,
-    "Esteban Ocon" : Ocon,
-    "Kevin Magnussen" : Kevin,
-    "Nico Hulkemberg" : Hulkemberg,
-    "Zhou Guanyu" : Zhou,
-    "Valtteri Bottas" : Bottas,
-    "Logan Sargeant" : Sargeant,
-    "Alexander Albon" : Albon,
-    "Yuki Tsunoda" : Tsunoda,
-    "Daniel Ricardo" : Ricardo,
-    "Liam Lawson" : Lawson,
-    "Franco Colapinto" : Colapinto,
-    "Oliver Bearman" : Bearman,
-    "Jack Doohan" : Doohan
-
-} 
-
-
+  "Max Verstappen": Max,
+  "Sergio Pérez": Sergio,
+  "Lando Norris": Norris,
+  "Oscar Piastri": Oscar,
+  "Charles Leclerc": Charles,
+  "Carlos Sainz Jr.": Carlos,
+  "George Russell": George,
+  "Lewis Hamilton": Lewis,
+  "Fernando Alonso": Alonso,
+  "Lance Stroll": Stroll,
+  "Pierre Gasly": Gasly,
+  "Esteban Ocon": Ocon,
+  "Kevin Magnussen": Kevin,
+  "Nico Hülkenberg": Hulkemberg,
+  "Zhou Guanyu": Zhou,
+  "Valtteri Bottas": Bottas,
+  "Logan Sargeant": Sargeant,
+  "Alexander Albon": Albon,
+  "Yuki Tsunoda": Tsunoda,
+  "Daniel Ricciardo": Ricardo,
+  "Liam Lawson": Lawson,
+  "Franco Colapinto": Colapinto,
+  "Oliver Bearman": Bearman,
+  "Jack Doohan": Doohan,
+};

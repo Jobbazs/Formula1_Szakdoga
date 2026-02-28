@@ -5,9 +5,13 @@ import Navbar from './components/navbar';
 import GrandPrixPage from "./pages/grand_prix";
 import DriversPage from './pages/driver';
 import LoginPage from './pages/login';
+import ConstructorPage from './pages/constructors';
+
+import './styles/index.css';
 import './styles/navbar.css'; 
 import './styles/home.css';
 import{imageMap} from './utils/drivers-image-map';
+
 
 // async function login() {
 //   console.log("login start");
@@ -59,7 +63,7 @@ const App: React.FC = () => {
           <Route path="/grandprix/:id" element={<div>Grand Prix részletek oldal</div>} />
           <Route path="/driver" element={<DriversPage />} />
           <Route path="/driver/:id" element={<div>Driver részletek oldal</div>} />
-          <Route path="/constructor" element={<div>Ez a Constructor oldal</div>} />
+          <Route path="/constructor" element={<ConstructorPage />} />
           <Route path="/constructor/:id" element={<div>Constructor részletek oldal</div>} />
           <Route path="/circuit" element={<div>Ez a Circuits oldal</div>} />
           <Route path="/login" element={<LoginPage />} />
