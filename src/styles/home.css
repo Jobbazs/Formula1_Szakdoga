@@ -1,8 +1,180 @@
-
-.card {
+.home-page {
+  background-color: #000;
+  min-height: 100vh;
   padding: 2rem;
-  background-color: #fff;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  /* ... */
+  color: white;
+}
+
+.season-header h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  letter-spacing: 3px;
+}
+
+.tab-container {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  border-bottom: 2px solid #333;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 1rem 0;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.tab-btn.active {
+  color: white;
+}
+
+.tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #e10600;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.carousel-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  font-size: 3rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.carousel-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  flex: 1;
+}
+
+.item-card {
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+  min-height: 400px;
+  position: relative;
+}
+
+.item-card:hover {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 2rem;
+  height: 96%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card-info {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.card-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
+.constructor-top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.constructor-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.constructor-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.constructor-car-wrap {
+  margin-top: auto;
+}
+
+.constructor-car {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #444;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dot.active {
+  background: #e10600;
+  width: 40px;
+  border-radius: 6px;
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.5rem;
 }
