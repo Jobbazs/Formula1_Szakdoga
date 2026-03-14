@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class TeamDriver extends Model
+{
+    /** @use HasFactory<\Database\Factories\TeamDriverFactory> */
+    use HasFactory;
+
+      protected $fillable = [
+        'ConstructorID', 
+        'DriverID', 
+        'FirstYear', 
+        'EndYear',
+        
+       
+    ];
+}
