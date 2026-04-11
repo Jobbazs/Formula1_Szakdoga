@@ -11,6 +11,8 @@ import './styles/index.css';
 import './styles/navbar.css'; 
 import './styles/home.css';
 import{imageMap} from './utils/drivers-image-map';
+import HomePage from "./pages/home";
+import StatisticsPage from "./pages/statistics";
 
 
 // async function login() {
@@ -59,6 +61,8 @@ const App: React.FC = () => {
       <div className="content">
         <Routes>
           {/* <Route path="/" element={<SmartButtons />} /> */}
+          <Route path="/" element={<HomePage />} />
+          <Route path="/statistics" element={<StatisticsPage />} />
           <Route path="/grand_prix" element={<GrandPrixPage />} />
           <Route path="/grandprix/:id" element={<div>Grand Prix részletek oldal</div>} />
           <Route path="/driver" element={<DriversPage />} />
