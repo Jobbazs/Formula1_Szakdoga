@@ -26,9 +26,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-    'name' => 'Admin',                // a felhasználó neve
-    'email' => 'admin@admin.hu',      // a felhasználó email címe
-    'password' => \Illuminate\Support\Facades\Hash::make('Aa123456'), // a jelszó biztonságos hash-elése
+    'name' => 'Admin',                
+    'email' => 'admin@admin.hu',      
+    'password' => \Illuminate\Support\Facades\Hash::make('Aa123456'), 
 ]);
 
     }

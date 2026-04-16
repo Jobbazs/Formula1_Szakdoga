@@ -14,16 +14,13 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
-        // Hitelesítés
         $request->authenticate();
 
-        // Session regenerálása biztonság miatt
         $request->session()->regenerate();
 
-        // Visszaadjuk a felhasználót JSON-ként
         return response()->json([
             'message' => 'Login successful',
-            'user' => $request->user() // Authenticated user objektum
+            'user' => $request->user() 
         ], 200);
     }
 

@@ -25,7 +25,6 @@ return new class extends Migration
                 
                
                 
-                -- Előtte 26 fő (történelmi rekord)
                 IF race_year < 2024 AND driver_count >= 26 THEN
                     SIGNAL SQLSTATE "45000" 
                     SET MESSAGE_TEXT = "Maximum 26 versenyző indulhat";

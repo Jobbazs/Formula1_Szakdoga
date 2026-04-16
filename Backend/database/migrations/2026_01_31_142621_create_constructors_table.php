@@ -24,7 +24,6 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        // Megszorítások
         DB::statement('ALTER TABLE constructors ADD CONSTRAINT chk_founded_year_min CHECK (FoundedYear IS NULL OR FoundedYear >= 1900)');
         DB::statement('ALTER TABLE constructors ADD CONSTRAINT chk_name_not_empty CHECK (CHAR_LENGTH(TRIM(Name)) > 0)');
         

@@ -15,11 +15,7 @@ use App\Http\Controllers\TeamDriverController;
 use App\Http\Middleware\Admin;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Public auth routes
-|--------------------------------------------------------------------------
-*/
+
 
 Route::post('/register', [RegisteredUserController::class, 'store']);
 Route::post('/login', [AuthenticatedSessionController::class, 'store']);
@@ -28,59 +24,45 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
-/*
-|--------------------------------------------------------------------------
-| CRUD routes
-|--------------------------------------------------------------------------
-*/
 
-// Constructor
+
 Route::get('/constructor', [ConstructorController::class, 'index']);
 Route::get('/constructor/{id}', [ConstructorController::class, 'show']);
 Route::post('/constructor', [ConstructorController::class, 'store']);
 Route::put('/constructor/{id}', [ConstructorController::class, 'update']);
 Route::delete('/constructor/{id}', [ConstructorController::class, 'destroy']);
 
-// Circuit
 Route::get('/circuit', [CircuitsController::class, 'index']);
 Route::get('/circuit/{id}', [CircuitsController::class, 'show']);
 Route::post('/circuit', [CircuitsController::class, 'store']);
 Route::put('/circuit/{id}', [CircuitsController::class, 'update']);
 Route::delete('/circuit/{id}', [CircuitsController::class, 'destroy']);
 
-// Driver
 Route::get('/driver', [DriverController::class, 'index']);
 Route::get('/driver/{id}', [DriverController::class, 'show']);
 Route::post('/driver', [DriverController::class, 'store']);
 Route::put('/driver/{id}', [DriverController::class, 'update']);
 Route::delete('/driver/{id}', [DriverController::class, 'destroy']);
 
-// Grand Prix
 Route::get('/grand_prix', [GrandPrixController::class, 'index']);
 Route::get('/grand_prix/{id}', [GrandPrixController::class, 'show']);
 Route::post('/grand_prix', [GrandPrixController::class, 'store']);
 Route::put('/grand_prix/{id}', [GrandPrixController::class, 'update']);
 Route::delete('/grand_prix/{id}', [GrandPrixController::class, 'destroy']);
 
-// Qualifying
 Route::get('/qualifying_result', [QualifyingResultController::class, 'index']);
 Route::get('/qualifying_result/{id}', [QualifyingResultController::class, 'show']);
 Route::post('/qualifying_result', [QualifyingResultController::class, 'store']);
 Route::put('/qualifying_result/{id}', [QualifyingResultController::class, 'update']);
 Route::delete('/qualifying_result/{id}', [QualifyingResultController::class, 'destroy']);
 
-// Team driver
 Route::get('/team_driver', [TeamDriverController::class, 'index']);
 Route::get('/team_driver/{id}', [TeamDriverController::class, 'show']);
 Route::post('/team_driver', [TeamDriverController::class, 'store']);
 Route::put('/team_driver/{id}', [TeamDriverController::class, 'update']);
 Route::delete('/team_driver/{id}', [TeamDriverController::class, 'destroy']);
 
-/*
-|--------------------------------------------------------------------------
-| Authenticated routes
-|--------------------------------------------------------------------------
-*/
+
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/user', function (Request $request) {
@@ -90,21 +72,13 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/logout', [AuthenticatedSessionController::class, 'destroy']);
 });
 
-/*
-|--------------------------------------------------------------------------
-| Admin routes
-|--------------------------------------------------------------------------
-*/
+
 
 Route::middleware(['auth:sanctum', Admin::class])->group(function () {
     Route::get('/users', [RegisteredUserController::class, 'index']);
 });
 
-/*
-|--------------------------------------------------------------------------
-| News endpoint
-|--------------------------------------------------------------------------
-*/
+
 
 Route::get('/news', function () {
     try {
@@ -128,12 +102,6 @@ Route::get('/news', function () {
         return response()->json(['error' => 'Hírek betöltése sikertelen'], 500);
     }
 });
-
-/*
-|--------------------------------------------------------------------------
-| Statistics endpoints
-|--------------------------------------------------------------------------
-*/
 
 Route::get('/statistics/driver/{id}', [StatisticsController::class, 'driverStats']);
 Route::get('/statistics/constructor/{id}', [StatisticsController::class, 'constructorStats']);

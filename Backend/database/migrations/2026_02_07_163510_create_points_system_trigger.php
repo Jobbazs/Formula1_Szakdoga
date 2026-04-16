@@ -7,7 +7,6 @@ return new class extends Migration
 {
     public function up(): void
     {
-        // ✅ Töröld előbb, ha létezik
         DB::unprepared('DROP TRIGGER IF EXISTS auto_assign_points');
         
         DB::unprepared('
@@ -22,7 +21,6 @@ return new class extends Migration
                 FROM grandprix 
                 WHERE GrandPrixID = NEW.GrandPrixID;
                 
-                -- 2010-től jelenlegi pontrendszer
                 IF race_year >= 2010 THEN
                     SET NEW.Points = CASE NEW.Position
                         WHEN 1 THEN 25
@@ -39,8 +37,6 @@ return new class extends Migration
                     END;
                 END IF;
                 
-                -- ✅ JAVÍTVA: Status helyett Position NULL ellenőrzés
-                -- Ha Position NULL (kiesett), akkor 0 pont
                 IF NEW.Position IS NULL THEN
                     SET NEW.Points = 0;
                 END IF;

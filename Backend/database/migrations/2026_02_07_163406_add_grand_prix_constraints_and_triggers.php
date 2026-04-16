@@ -7,7 +7,6 @@ return new class extends Migration
 {
     public function up(): void
     {
-        // Töröld az összes régi triggert
         DB::unprepared('DROP TRIGGER IF EXISTS before_race_result_insert');
         DB::unprepared('DROP TRIGGER IF EXISTS before_points_insert');
         DB::unprepared('DROP TRIGGER IF EXISTS after_race_result_insert');
@@ -23,25 +22,21 @@ return new class extends Migration
                 DECLARE position_count INT;
                 DECLARE race_year INT;
                 
-                -- Verseny évének lekérése
                 SELECT Year INTO race_year 
                 FROM grandprix 
                 WHERE GrandPrixID = NEW.GrandPrixID;
                 
-                -- Vagyis azokat, akiknek VAN pozíciója (nem NULL)
                 SELECT COUNT(*) INTO position_count 
                 FROM race_result 
                 WHERE GrandPrixID = NEW.GrandPrixID 
                   AND GpOrSprint = NEW.GpOrSprint
-                  AND Position IS NOT NULL;  -- ← Csak azok, akik befutottak
+                  AND Position IS NOT NULL;  
                 
-                -- 2024-től maximum 20 befutó pozíció
                 IF race_year >= 2024 AND position_count >= 20 AND NEW.Position IS NOT NULL THEN
                     SIGNAL SQLSTATE "45000" 
                     SET MESSAGE_TEXT = "2024-től maximum 20 pozíció lehet egy versenyen";
                 END IF;
                 
-                -- 2024 előtt maximum 26 befutó pozíció
                 IF race_year < 2024 AND position_count >= 26 AND NEW.Position IS NOT NULL THEN
                     SIGNAL SQLSTATE "45000" 
                     SET MESSAGE_TEXT = "Maximum 26 pozíció lehet egy versenyen";
@@ -61,7 +56,6 @@ return new class extends Migration
                 FROM grandprix 
                 WHERE GrandPrixID = NEW.GrandPrixID;
                 
-                -- 2010-től érvényes pontrendszer
                 IF race_year >= 2010 THEN
                     CASE NEW.Position
                         WHEN 1 THEN SET NEW.Points = 25;
@@ -102,7 +96,6 @@ return new class extends Migration
                     END CASE;
                 END IF;
                 
-                -- Ha Position NULL (kiesett), 0 pont
                 IF NEW.Position IS NULL THEN
                     SET NEW.Points = 0;
                 END IF;
@@ -115,7 +108,6 @@ return new class extends Migration
             AFTER INSERT ON race_result
             FOR EACH ROW
             BEGIN
-                -- Csak GP esetén (nem sprint)
                 IF NEW.Position = 1 AND NEW.GpOrSprint = 1 THEN
                     UPDATE grandprix 
                     SET WinnerDriverID = NEW.DriverID 

@@ -14,9 +14,7 @@ class RaceresultController extends Controller
 {
     public function index()
     {
-        // dump("Valami");
          return RaceResult::results();
-        //    return response()->json(null, 204);
     }
 
     public function store(StoreRaceresultRequest $request)
