@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import AbuDhabi from "../forrasok/Circuits/Abu_Dhabi_Circuit.avif";
 import Australia from "../forrasok/Circuits/Australia_Circuit.avif";
 import Austria from "../forrasok/Circuits/Austria_Circuit.avif";
@@ -21,8 +20,8 @@ import SaudiArabia from "../forrasok/Circuits/Saudi_Arabia_Circuit.avif";
 import Singapore from "../forrasok/Circuits/Singapore_Circuit.avif";
 import Spain from "../forrasok/Circuits/Spain_Circuit.avif";
 import USA from "../forrasok/Circuits/USA_Circuit.avif";
-import Brazil from"../forrasok/Circuits/Brazil_Circuit.avif";
-import Canada from "../forrasok/Circuits/Canada_Circuit.avif"
+import Brazil from "../forrasok/Circuits/Brazil_Circuit.avif";
+import Canada from "../forrasok/Circuits/Canada_Circuit.avif";
 
 export const circuitImageMap: Record<string, string> = {
   "United Arab Emirates": AbuDhabi,
@@ -43,6 +42,7 @@ export const circuitImageMap: Record<string, string> = {
   "Japan": Japan,
   "Las Vegas": LasVegas,
   "United States": USA,
+  "USA": USA,
   "Mexico": Mexico,
   "Miami": Miami,
   "Monaco": Monaco,
@@ -51,21 +51,6 @@ export const circuitImageMap: Record<string, string> = {
   "Saudi Arabia": SaudiArabia,
   "Singapore": Singapore,
   "Spain": Spain,
-  "USA": USA,
   "Brazil": Brazil,
   "Canada": Canada
 };
-=======
-import Bahrain from "../forrasok/Circuits/Bahrain_Circuit.avif"
-import Saudi_Arabia from "../forrasok/Circuits/Saudi_Arabia_Circuit.avif"
-
-
-export const imageMap = {
-"Bahrain International Circuit":Bahrain,
-"Jeddah Corniche Circuit":Saudi_Arabia,
-
-
-
-
-}
->>>>>>> gb_02_28

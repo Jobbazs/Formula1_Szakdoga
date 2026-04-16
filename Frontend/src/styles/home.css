@@ -1,187 +1,11 @@
 .home-page {
-<<<<<<< HEAD
-  background-color: #000;
-  min-height: 100vh;
-  padding: 2rem;
-  color: white;
-}
-
-.season-header h1 {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-  letter-spacing: 3px;
-}
-
-.tab-container {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 3rem;
-  border-bottom: 2px solid #333;
-}
-
-.tab-btn {
-  background: none;
-  border: none;
-  color: #888;
-  font-size: 1.3rem;
-  font-weight: 600;
-  padding: 1rem 0;
-  cursor: pointer;
-  transition: all 0.3s;
-  position: relative;
-}
-
-.tab-btn.active {
-  color: white;
-}
-
-.tab-btn.active::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: #e10600;
-}
-
-.carousel-container {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.carousel-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  color: white;
-  font-size: 3rem;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.carousel-btn:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.carousel-btn:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
-.items-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  flex: 1;
-}
-
-.item-card {
-  border-radius: 16px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s;
-  min-height: 400px;
-  position: relative;
-}
-
-.item-card:hover {
-  transform: scale(1.05);
-}
-
-.card-content {
-  padding: 2rem;
-  height: 96%;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-name {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.card-info {
-  font-size: 1rem;
-  opacity: 0.9;
-  margin-bottom: 1rem;
-}
-
-.card-image {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  max-width: 70%;
-  max-height: 70%;
-  object-fit: contain;
-}
-
-.constructor-top {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.constructor-logo {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-}
-
-.constructor-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-}
-
-.constructor-car-wrap {
-  margin-top: auto;
-}
-
-.constructor-car {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-.pagination-dots {
-  display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-top: 2rem;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #444;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.dot.active {
-  background: #e10600;
-  width: 40px;
-  border-radius: 6px;
-}
-
-.loading {
-  text-align: center;
-  padding: 4rem;
-  font-size: 1.5rem;
-=======
   padding: 1.5rem;
+  color: white;
+  min-height: 100vh;
+  background: #000;
 }
 
+/* GRID LAYOUT */
 .home-main-grid {
   display: grid;
   grid-template-columns: 1fr 280px;
@@ -189,7 +13,7 @@
   margin-bottom: 1.5rem;
 }
 
-/* Hírek kártya */
+/* NEWS CARD */
 .home-news-card {
   background: #2a2a2a;
   border-radius: 12px;
@@ -204,10 +28,9 @@
 
 .home-news-loading {
   color: #888;
-  font-size: 0.9rem;
-  margin: auto;
 }
 
+/* NEWS DOTS */
 .home-news-tabs {
   display: flex;
   gap: 6px;
@@ -221,55 +44,30 @@
   background: #555;
   border: none;
   cursor: pointer;
-  padding: 0;
-  transition: background 0.2s;
 }
 
 .home-news-dot.active {
   background: #e10600;
 }
 
+/* BADGE */
 .home-news-badge {
   background: #e10600;
-  color: #fff;
+  color: white;
   font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
   padding: 4px 10px;
   border-radius: 4px;
-  display: inline-block;
   margin-bottom: 0.75rem;
   width: fit-content;
 }
 
+/* TITLE */
 .home-news-title {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #fff;
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
 }
 
-.home-news-meta {
-  font-size: 0.85rem;
-  color: #aaa;
-  margin-bottom: 0.75rem;
-}
-
-.home-news-link {
-  color: #e10600;
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.home-news-link:hover {
-  color: #ff3322;
-}
-
-/* Történelem kártya */
+/* HISTORY */
 .home-history-card {
   background: #2a2a2a;
   border-radius: 12px;
@@ -278,21 +76,9 @@
 }
 
 .home-history-label {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
   color: #e10600;
-  margin-bottom: 0.5rem;
-}
-
-.home-history-date {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid #3a3a3a;
+  font-size: 11px;
+  text-transform: uppercase;
 }
 
 .home-history-item {
@@ -300,25 +86,11 @@
   border-bottom: 1px solid #2f2f2f;
 }
 
-.home-history-year {
-  font-size: 11px;
-  color: #e10600;
-  font-weight: 700;
-  margin-bottom: 3px;
-}
-
-.home-history-text {
-  font-size: 0.82rem;
-  color: #ccc;
-  line-height: 1.4;
-}
-
-/* Tab szekció */
+/* TABS */
 .home-tabs-section {
   background: #2a2a2a;
   border-radius: 12px;
   border: 1px solid #3a3a3a;
-  overflow: hidden;
 }
 
 .home-tabs-header {
@@ -328,22 +100,16 @@
 
 .home-tab {
   padding: 0.75rem 1.5rem;
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  cursor: pointer;
   color: #888;
-  border-bottom: 3px solid transparent;
-  margin-bottom: -1px;
-  transition: color 0.2s;
+  cursor: pointer;
 }
 
 .home-tab.active {
-  color: #fff;
-  border-bottom-color: #e10600;
+  color: white;
+  border-bottom: 3px solid #e10600;
 }
 
+/* GRID ITEMS */
 .home-tabs-body {
   padding: 1.25rem;
   display: grid;
@@ -354,29 +120,16 @@
 .home-mini-card {
   background: #1a1a1a;
   border-radius: 8px;
-  border: 1px solid #333;
   padding: 1rem;
   cursor: pointer;
-  transition: border-color 0.2s;
+  border: 1px solid #333;
 }
 
 .home-mini-card:hover {
   border-color: #e10600;
 }
 
-.home-mini-name {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 3px;
-}
-
-.home-mini-sub {
-  font-size: 0.78rem;
-  color: #888;
-}
-
-/* Reszponzív */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .home-main-grid {
     grid-template-columns: 1fr;
@@ -385,5 +138,4 @@
   .home-tabs-body {
     grid-template-columns: repeat(2, 1fr);
   }
->>>>>>> gb_02_28
 }

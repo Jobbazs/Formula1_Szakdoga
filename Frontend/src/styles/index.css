@@ -1,23 +1,18 @@
-<<<<<<< HEAD
-/* Globális css */
-=======
->>>>>>> gb_02_28
-
 body {
   margin: 0;
-  background-image: url('../forrasok/Background/HD-wallpaper-formula-1-f1-formula-1-formula-1-logo-racing.jpg'), url('../forrasok/Background/HD-wallpaper-formula-1-f1-formula-1-formula-1-logo-racing.jpg');
+  background-image: url('../forrasok/Background/HD-wallpaper-formula-1-f1-formula-1-formula-1-logo-racing.jpg'),
+    url('../forrasok/Background/HD-wallpaper-formula-1-f1-formula-1-formula-1-logo-racing.jpg');
   background-size: 10% auto, 10% auto;
   background-position: left top, right top;
 }
+
+/* Globális css */
 
 #root {
   width: 80%;
   margin: 0 auto;
   background-color: #202020;
-<<<<<<< HEAD
-=======
   min-height: 10vh;
   padding-bottom: 5%;
   box-sizing: border-box;
->>>>>>> gb_02_28
 }
