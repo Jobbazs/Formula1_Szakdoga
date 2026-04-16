@@ -17,11 +17,11 @@ class Circuits extends Model
         'Name', 
         'DriverID', 
         'Location',
-        'Nation ',
-        'FirstGrandPrix ',
-        'RecordLapTime ',
-        'RecordDriver ',
-        'Image ',
+        'Nation',
+        'FirstGrandPrix',
+        'RecordLapTime',
+        'RecordDriver',
+        'Image',
        
     ];
 
