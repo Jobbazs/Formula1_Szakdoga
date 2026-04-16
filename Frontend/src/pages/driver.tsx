@@ -18,7 +18,11 @@ const constructorColors: Record<number, string> = {
   2:  "linear-gradient(135deg, #460202 0%, #a6051a 100%)",
   3:  "linear-gradient(135deg, #25412b 0%, #00e6cf 100%)",
   4:  "linear-gradient(135deg, #1a1a1a 0%, #ff8000 100%)",
+<<<<<<< HEAD
   5: "radial-gradient(circle at bottom right, #00665e 0%, #003a33 50%)", 
+=======
+  5: "radial-gradient(circle at bottom right, #00665e 0%, #003a33 50%)",  // Aston Martin
+>>>>>>> gb_02_28
   6:  "linear-gradient(135deg, #fd0ae9 0%, #0066ff 80%)",
   7:  "radial-gradient(circle at bottom right, #e8e8e8 0%, #003087 50%)",
   8:  "linear-gradient(135deg, #1a1a2e 0%, #4778af 100%)",

@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+<<<<<<< HEAD
+=======
+use App\Http\Controllers\StatisticsController;
+>>>>>>> gb_02_28
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CircuitsController;
@@ -72,9 +76,13 @@ Route::delete('/team_driver/{id}', [TeamDriverController::class, 'destroy']);
 
 
 
+<<<<<<< HEAD
 // Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+=======
+
+>>>>>>> gb_02_28
 
 
 Route::post('/register', [RegisteredUserController::class, 'store']);
@@ -86,13 +94,48 @@ Route::middleware(['auth:sanctum'])
         Route::get('/user', function (Request $request) {
             return $request->user();
         });
+<<<<<<< HEAD
         // Kijelentkezés útvonal
+=======
+>>>>>>> gb_02_28
         Route::post('/logout', [AuthenticatedSessionController::class, 'destroy']);
     });
 
 
+<<<<<<< HEAD
 // Írjunk admin útvonalakat (api.php), csoportot hozunk létre a rétegnek:
+=======
+>>>>>>> gb_02_28
 Route::middleware(['auth:sanctum', Admin::class])
     ->group(function () {
         Route::get('/users', [RegisteredUserController::class, 'index']);
     });
+<<<<<<< HEAD
+=======
+
+
+    Route::get('/news', function () {
+    try {
+        $rss = simplexml_load_file('https://www.formula1.com/content/fom-website/en/latest/all.xml');
+        $items = [];
+        foreach ($rss->channel->item as $item) {
+            $items[] = [
+                'title' => (string) $item->title,
+                'link'  => (string) $item->link,
+                'date'  => (string) $item->pubDate,
+                'description' => (string) $item->description,
+            ];
+            if (count($items) >= 5) break;
+        }
+        return response()->json($items);
+    } catch (\Exception $e) {
+        return response()->json(['error' => 'Hírek betöltése sikertelen'], 500);
+    }
+});
+
+
+Route::get('/statistics/driver/{id}',          [StatisticsController::class, 'driverStats']);
+Route::get('/statistics/constructor/{id}',     [StatisticsController::class, 'constructorStats']);
+Route::get('/statistics/standings/drivers',    [StatisticsController::class, 'driverStandings']);
+Route::get('/statistics/standings/constructors', [StatisticsController::class, 'constructorStandings']);
+>>>>>>> gb_02_28

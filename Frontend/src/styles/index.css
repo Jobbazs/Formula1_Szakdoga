@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* Globális css */
+=======
+>>>>>>> gb_02_28
 
 body {
   margin: 0;
@@ -11,4 +14,10 @@ body {
   width: 80%;
   margin: 0 auto;
   background-color: #202020;
+<<<<<<< HEAD
+=======
+  min-height: 10vh;
+  padding-bottom: 5%;
+  box-sizing: border-box;
+>>>>>>> gb_02_28
 }
