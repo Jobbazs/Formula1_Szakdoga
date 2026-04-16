@@ -12,6 +12,10 @@ interface GrandPrix {
   Image?: string;
 }
 
+interface GrandPrixPageProps {
+  isAdmin: boolean;
+}
+
 const countryColors: Record<string, string> = {
   "Bahrain":              "linear-gradient(to right, #ce1126 70%, #ffffff 70%)",
   "Saudi Arabia":         "linear-gradient(to right, #006c35 80%, #ffffff 80%)",
@@ -36,7 +40,7 @@ const countryColors: Record<string, string> = {
   "United Arab Emirates": "linear-gradient(to right, #00732f 33%, #ffffff 33%, #ffffff 66%, #000000 66%)",
 };
 
-function GrandPrixPage() {
+function GrandPrixPage({ isAdmin }: GrandPrixPageProps) {
   const [grand_prix, setGrandPrix] = useState<GrandPrix[]>([]);
   const [loading, setLoading] = useState(false);
   const [hoveredId, setHoveredId] = useState<number | null>(null);
@@ -67,6 +71,14 @@ function GrandPrixPage() {
     <div className="grandprix-page">
       <div className="grandprix-header">
         <h1>Grand Prix</h1>
+        {isAdmin && (
+          <button
+            className="admin-add-btn"
+            onClick={() => navigate("/admin/grandprix")}
+          >
+            + Manage Grand Prix
+          </button>
+        )}
       </div>
 
       {loading ? (

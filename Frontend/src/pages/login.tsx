@@ -1,13 +1,16 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import '../styles/login.css';
 
-function LoginPage() {
+interface LoginPageProps {
+  onLoginSuccess: () => void;
+}
+
+function LoginPage({ onLoginSuccess }: LoginPageProps) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
 
   const getCookie = (name: string) => {
@@ -18,18 +21,11 @@ function LoginPage() {
 
   const validateForm = () => {
     const newErrors: { email?: string; password?: string } = {};
+    if (!email) newErrors.email = "Email is required";
+    else if (!/\S+@\S+\.\S+/.test(email)) newErrors.email = "Email is invalid";
 
-    if (!email) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      newErrors.email = "Email is invalid";
-    }
-
-    if (!password) {
-      newErrors.password = "Password is required";
-    } else if (password.length < 4) {
-      newErrors.password = "Password must be at least 4 characters";
-    }
+    if (!password) newErrors.password = "Password is required";
+    else if (password.length < 4) newErrors.password = "Password must be at least 4 characters";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -37,13 +33,10 @@ function LoginPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (!validateForm()) return;
-
     setLoading(true);
 
     try {
-      // CSRF cookie lekérése
       await fetch("http://localhost:8000/sanctum/csrf-cookie", {
         method: "GET",
         credentials: "include"
@@ -51,7 +44,6 @@ function LoginPage() {
 
       const csrfToken = getCookie('XSRF-TOKEN');
 
-      // Login request
       const response = await fetch("http://localhost:8000/api/login", {
         method: "POST",
         credentials: "include",
@@ -65,8 +57,14 @@ function LoginPage() {
 
       if (response.ok) {
         const data = await response.json();
-        console.log("Login successful:", data);
-        navigate("/");
+
+        if (data.user.Role === 1) {
+          localStorage.setItem("role", "admin");
+          onLoginSuccess();
+          navigate("/admin/users");
+        } else {
+          setErrors({ email: "Only admins can log in" });
+        }
       } else {
         setErrors({ email: "Invalid credentials" });
       }
@@ -81,7 +79,7 @@ function LoginPage() {
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
-        <h2>Login</h2>
+        <h2>Admin Login</h2>
 
         <div className="form-group">
           <label>Email</label>
