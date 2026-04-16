@@ -46,7 +46,6 @@ function AdminDriverPage() {
     fetchDrivers();
   }, []);
 
-  // ─── API helpers ──────────────────────────────────────────────────────────
 
   const getCookie = (name: string): string | null => {
     const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
@@ -64,7 +63,6 @@ function AdminDriverPage() {
     "X-XSRF-TOKEN": csrfToken,
   });
 
-  // ─── Data fetching ────────────────────────────────────────────────────────
 
   const fetchDrivers = async () => {
     setLoading(true);
@@ -78,7 +76,6 @@ function AdminDriverPage() {
     }
   };
 
-  // ─── CRUD handlers ────────────────────────────────────────────────────────
 
   const handleAdd = async () => {
     try {
@@ -142,7 +139,6 @@ function AdminDriverPage() {
     }
   };
 
-  // ─── Sub-components ───────────────────────────────────────────────────────
 
   const renderAddForm = () => (
     <div className="admin-form-box">
@@ -196,7 +192,7 @@ function AdminDriverPage() {
             <td>{driver.BirthDate || "-"}</td>
             <td className="admin-driver-actions">
               <button className="admin-edit-btn" onClick={() => setEditDriver({ ...driver })}>
-                ✏️ Szerkesztés
+                 Szerkesztés
               </button>
               {deleteConfirmId === driver.DriverID ? (
                 <>
@@ -209,7 +205,7 @@ function AdminDriverPage() {
                 </>
               ) : (
                 <button className="admin-delete-btn" onClick={() => setDeleteConfirmId(driver.DriverID)}>
-                  🗑 Törlés
+                   Törlés
                 </button>
               )}
             </td>
@@ -249,7 +245,6 @@ function AdminDriverPage() {
     </div>
   );
 
-  // ─── Render ───────────────────────────────────────────────────────────────
 
   return (
     <div className="admin-form-page">
@@ -262,7 +257,7 @@ function AdminDriverPage() {
               {showAddForm ? "✕ Bezár" : "+ Add Driver"}
             </button>
             <button className="admin-form-cancel" onClick={() => navigate("/driver")}>
-              ← Vissza
+               Vissza
             </button>
           </div>
         </div>

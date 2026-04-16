@@ -46,7 +46,6 @@ function AdminGrandPrixPage() {
     fetchGrandPrix();
   }, []);
 
-  // ─── API helpers ──────────────────────────────────────────────────────────
 
   const getCookie = (name: string): string | null => {
     const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
@@ -64,7 +63,6 @@ function AdminGrandPrixPage() {
     "X-XSRF-TOKEN": csrfToken,
   });
 
-  // ─── Data fetching ────────────────────────────────────────────────────────
 
   const fetchGrandPrix = async () => {
     setLoading(true);
@@ -78,7 +76,6 @@ function AdminGrandPrixPage() {
     }
   };
 
-  // ─── CRUD handlers ────────────────────────────────────────────────────────
 
   const handleAdd = async () => {
     try {
@@ -142,7 +139,6 @@ function AdminGrandPrixPage() {
     }
   };
 
-  // ─── Sub-components ───────────────────────────────────────────────────────
 
   const renderAddForm = () => (
     <div className="admin-form-box">
@@ -190,7 +186,7 @@ function AdminGrandPrixPage() {
             <td>{gp.WinnerDriverID || "-"}</td>
             <td className="admin-driver-actions">
               <button className="admin-edit-btn" onClick={() => setEditGP({ ...gp })}>
-                ✏️ Szerkesztés
+                 Szerkesztés
               </button>
               {deleteConfirmId === gp.GrandPrixID ? (
                 <>
@@ -203,7 +199,7 @@ function AdminGrandPrixPage() {
                 </>
               ) : (
                 <button className="admin-delete-btn" onClick={() => setDeleteConfirmId(gp.GrandPrixID)}>
-                  🗑 Törlés
+                   Törlés
                 </button>
               )}
             </td>
@@ -235,7 +231,6 @@ function AdminGrandPrixPage() {
     </div>
   );
 
-  // ─── Render ───────────────────────────────────────────────────────────────
 
   return (
     <div className="admin-form-page">
