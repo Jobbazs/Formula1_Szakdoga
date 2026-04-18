@@ -1,8 +1,8 @@
 .home-page {
   padding: 1.5rem;
   color: white;
-  min-height: 100vh;
-  background: #000;
+  min-height: 10vh;
+  
 }
 
 .home-main-grid {
@@ -129,4 +129,42 @@
   .home-tabs-body {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+
+.home-news-meta {
+  color: #aaa;
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+}
+
+.home-news-link {
+  color: #e10600;
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+  text-decoration: none;
+}
+
+.home-news-link:hover {
+  text-decoration: underline;
+}
+
+.home-history-date {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.home-tabs-header button {
+  padding: 0.75rem 1.5rem;
+  color: #888;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1rem;
+}
+
+.home-tabs-header button.active {
+  color: white;
+  border-bottom: 3px solid #e10600;
 }

@@ -116,41 +116,47 @@ export default function HomePage() {
   return (
     <div className="home-page">
 
-      {/* NEWS */}
-      <div className="home-news-card">
-        {news.length > 0 ? (
-          <>
-            <span className="home-news-badge">Latest News</span>
-            <div className="home-news-title">{news[activeNews].title}</div>
-            <div className="home-news-meta">{news[activeNews].date}</div>
+      <div className="home-main-grid">
+        <div className="home-news-card">
+          {news.length > 0 ? (
+            <>
+              <div className="home-news-tabs">
+                {news.map((_, i) => (
+                  <button
+                    key={i}
+                    className={`home-news-dot ${i === activeNews ? "active" : ""}`}
+                    onClick={() => setActiveNews(i)}
+                  />
+                ))}
+              </div>
+              <span className="home-news-badge">Latest News</span>
+              <div className="home-news-title">{news[activeNews].title}</div>
+              <div className="home-news-meta">{news[activeNews].date}</div>
+              
+                <a className="home-news-link"
+                href={news[activeNews].link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Read more →
+              </a>
+            </>
+          ) : (
+            <div className="home-news-loading">No news available</div>
+          )}
+        </div>
 
-            <a
-              className="home-news-link"
-              href={news[activeNews].link}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Read more →
-            </a>
-          </>
-        ) : (
-          <div>No news available</div>
-        )}
+        <div className="home-history-card">
+          <div className="home-history-label">On this day in F1</div>
+          <div className="home-history-date">{today}</div>
+          {todayHistory.map((h) => (
+            <div className="home-history-item" key={h.year}>
+              <strong>{h.year}</strong> {h.text}
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* HISTORY */}
-      <div className="home-history-card">
-        <div className="home-history-label">On this day in F1</div>
-        <div className="home-history-date">{today}</div>
-
-        {todayHistory.map((h) => (
-          <div key={h.year}>
-            <strong>{h.year}</strong> {h.text}
-          </div>
-        ))}
-      </div>
-
-      {/* TABS */}
       <div className="home-tabs-section">
         <div className="home-tabs-header">
           <button
@@ -194,6 +200,7 @@ export default function HomePage() {
               ))}
         </div>
       </div>
+
     </div>
   );
 }

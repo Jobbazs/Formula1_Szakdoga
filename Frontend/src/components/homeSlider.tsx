@@ -68,7 +68,6 @@ function HomeSlider() {
 
   return (
     <div className="home-slider">
-      {/* Toggle buttons */}
       <div className="top-toggle">
         <button
           className={view === "drivers" ? "active" : ""}
@@ -84,13 +83,11 @@ function HomeSlider() {
         </button>
       </div>
 
-      {/* Navigation arrows */}
       <div className="arrows">
         <button onClick={prevSlide}>◀</button>
         <button onClick={nextSlide}>▶</button>
       </div>
 
-      {/* Slide content */}
       <div className="slide-content">
         <img
           src={
