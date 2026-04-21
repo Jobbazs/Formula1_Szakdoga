@@ -6,23 +6,24 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreConstructorRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
     public function rules(): array
     {
         return [
-            //
+            'Name'               => 'required|string|max:255',
+            'Nationality'        => 'required|string|max:255',
+            'FoundedYear'        => 'required|integer',
+            'TeamPrincipal'      => 'required|string|max:255',
+            'Wins'               => 'required|integer',
+            'PolePositions'      => 'required|integer',
+            'Podiums'            => 'required|integer',
+            'WorldChampionships' => 'required|integer',
+            'History'            => 'nullable|string',
+            'Image'              => 'nullable|string',
         ];
     }
 }

@@ -6,23 +6,24 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateRaceresultRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
     public function rules(): array
     {
         return [
-            //
+            'GrandPrixID'   => 'sometimes|integer',
+            'DriverID'      => 'sometimes|integer',
+            'ConstructorID' => 'sometimes|integer',
+            'Position'      => 'nullable|integer',
+            'Grid'          => 'nullable|integer',
+            'Laps'          => 'nullable|integer',
+            'TimeOrRetired' => 'nullable|string|max:255',
+            'Points'        => 'sometimes|numeric',
+            'FastestLap'    => 'nullable|boolean',
+            'GpOrSprint'    => 'nullable|string|max:50',
         ];
     }
 }

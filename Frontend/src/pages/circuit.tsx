@@ -14,7 +14,11 @@ interface Circuit {
   Image?: string;
 }
 
-function CircuitPage() {
+interface CircuitPageProps {
+  isAdmin: boolean;
+}
+
+function CircuitPage({ isAdmin }: CircuitPageProps) {
   const [circuits, setCircuits] = useState<Circuit[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -35,7 +39,6 @@ function CircuitPage() {
       }
       
       const data = await response.json();
-      console.log("Circuits:", data);
       setCircuits(data);
     } catch (err) {
       console.error("Failed to fetch circuits:", err);
@@ -73,6 +76,11 @@ function CircuitPage() {
     <div className="circuit-page">
       <div className="circuit-header">
         <h1>CIRCUITS</h1>
+        {isAdmin && (
+          <button className="admin-add-btn" onClick={() => navigate("/admin/circuits")}>
+            + Manage Circuits
+          </button>
+        )}
       </div>
 
       <div className="circuits-grid">
