@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Circuits extends Model
 {
-    /** @use HasFactory<\Database\Factories\CircuitsFactory> */
     use HasFactory;
 
     protected $primaryKey = 'CircuitID';
-    
+    public $timestamps = false;
+
     protected $fillable = [
         'CircuitID', 
         'Name', 
@@ -22,13 +22,10 @@ class Circuits extends Model
         'RecordLapTime',
         'RecordDriver',
         'Image',
-       
     ];
 
-    
-    
     public function grandPrix()
-{
-    return $this->hasMany(GrandPrix::class, 'CircuitID', 'CircuitID');
-}
+    {
+        return $this->hasMany(GrandPrix::class, 'CircuitID', 'CircuitID');
+    }
 }

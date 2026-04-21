@@ -62,6 +62,12 @@ Route::post('/team_driver', [TeamDriverController::class, 'store']);
 Route::put('/team_driver/{id}', [TeamDriverController::class, 'update']);
 Route::delete('/team_driver/{id}', [TeamDriverController::class, 'destroy']);
 
+Route::get('/race_result', [RaceresultController::class, 'index']);
+Route::get('/race_result/{id}', [RaceresultController::class, 'show']);
+Route::post('/race_result', [RaceresultController::class, 'store']);
+Route::put('/race_result/{id}', [RaceresultController::class, 'update']);
+Route::delete('/race_result/{id}', [RaceresultController::class, 'destroy']);
+
 
 
 Route::middleware(['auth:sanctum'])->group(function () {

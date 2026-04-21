@@ -11,7 +11,10 @@ import LoginPage from './pages/login';
 import StatisticsPage from "./pages/statistics";
 
 import AdminDriverPage from "./adminPages/adminDriverPage";
-import AdminGrandPrixPage from "./adminPages/adminGrandPrixPages";
+import AdminGrandPrixPage from "./adminPages/adminGrandPrixPage";
+import AdminConstructorPage from "./adminPages/adminConstructorPage";
+import AdminCircuitPage from "./adminPages/adminCircuitPage";
+import AdminStatisticsPage from "./adminPages/adminStatistics";
 
 import './styles/index.css';
 import './styles/navbar.css'; 
@@ -29,7 +32,7 @@ const App: React.FC = () => {
       <div className="content">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/statistics" element={<StatisticsPage />} />
+          <Route path="/statistics" element={<StatisticsPage isAdmin={isAdmin} />} />
 
           <Route path="/grand_prix" element={<GrandPrixPage isAdmin={isAdmin} />} />
           <Route path="/grandprix/:id" element={<div>Grand Prix részletek oldal</div>} />
@@ -37,16 +40,19 @@ const App: React.FC = () => {
           <Route path="/driver" element={<DriversPage isAdmin={isAdmin} />} />
           <Route path="/driver/:id" element={<div>Driver részletek oldal</div>} />
 
-          <Route path="/constructor" element={<ConstructorPage />} />
+          <Route path="/constructor" element={<ConstructorPage isAdmin={isAdmin} />} />
           <Route path="/constructor/:id" element={<div>Constructor részletek oldal</div>} />
 
-          <Route path="/circuit" element={<CircuitPage />} />
+          <Route path="/circuit" element={<CircuitPage isAdmin={isAdmin} />} />
           <Route path="/circuit/:id" element={<div>Circuit részletek oldal</div>} />
 
           <Route path="/login" element={<LoginPage onLoginSuccess={() => setIsAdmin(true)} />} />
 
           <Route path="/admin/drivers" element={<AdminDriverPage />} />
           <Route path="/admin/grandprix" element={<AdminGrandPrixPage />} />
+          <Route path="/admin/constructors" element={<AdminConstructorPage />} />
+          <Route path="/admin/circuits" element={<AdminCircuitPage />} />
+          <Route path="/admin/statistics" element={<AdminStatisticsPage />} />
 
           <Route path="*" element={<div className="not-found">404 - Oldal nem található</div>} />
         </Routes>

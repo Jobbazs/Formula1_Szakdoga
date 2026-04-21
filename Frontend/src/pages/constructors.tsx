@@ -17,6 +17,10 @@ interface Constructor {
   Image?: string;
 }
 
+interface ConstructorPageProps {
+  isAdmin: boolean;
+}
+
 const constructorColors: Record<number, string> = {
   1:  "linear-gradient(135deg, #0d2747 0%, #c8102e 100%)",
   2:  "linear-gradient(135deg, #460202 0%, #a6051a 100%)",
@@ -30,7 +34,7 @@ const constructorColors: Record<number, string> = {
   10: "linear-gradient(135deg, #1a1a1a 0%, #b6babd 100%)",
 };
 
-function ConstructorPage() {
+function ConstructorPage({ isAdmin }: ConstructorPageProps) {
   const [constructors, setConstructors] = useState<Constructor[]>([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -60,6 +64,14 @@ function ConstructorPage() {
     <div className="constructor-page">
       <div className="constructor-header">
         <h1>Constructors</h1>
+        {isAdmin && (
+          <button
+            className="admin-add-btn"
+            onClick={() => navigate("/admin/constructors")}
+          >
+            + Manage Constructors
+          </button>
+        )}
       </div>
 
       {loading ? (
