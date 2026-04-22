@@ -61,7 +61,7 @@ function LoginPage({ onLoginSuccess }: LoginPageProps) {
         if (data.user.Role === 1) {
           localStorage.setItem("role", "admin");
           onLoginSuccess();
-          navigate("/admin/users");
+          navigate("/");
         } else {
           setErrors({ email: "Only admins can log in" });
         }
