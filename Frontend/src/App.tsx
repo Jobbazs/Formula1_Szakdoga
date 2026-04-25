@@ -21,6 +21,8 @@ import GrandPrixDetailPage from "./pages/detailPages/grandPrixDetail";
 import ConstructorDetailPage from "./pages/detailPages/constructorDetail";
 import CircuitDetailPage from "./pages/detailPages/circuitDetail";
 
+import { ThemeProvider } from "./components/themeContext";
+
 import "./styles/index.css";
 import "./styles/navbar.css";
 import "./styles/home.css";
@@ -31,54 +33,56 @@ const App: React.FC = () => {
   );
 
   return (
-    <Router>
-      <Navbar isAdmin={isAdmin} onLogout={() => setIsAdmin(false)} />
+    <ThemeProvider>
+      <Router>
+        <Navbar isAdmin={isAdmin} onLogout={() => setIsAdmin(false)} />
 
-      <div className="content">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
 
-          <Route
-            path="/statistics"
-            element={<StatisticsPage isAdmin={isAdmin} />}
-          />
+            <Route
+              path="/statistics"
+              element={<StatisticsPage isAdmin={isAdmin} />}
+            />
 
-          <Route
-            path="/grand_prix"
-            element={<GrandPrixPage isAdmin={isAdmin} />}
-          />
-          <Route path="/grandprix/:id" element={<GrandPrixDetailPage />} />
+            <Route
+              path="/grand_prix"
+              element={<GrandPrixPage isAdmin={isAdmin} />}
+            />
+            <Route path="/grandprix/:id" element={<GrandPrixDetailPage />} />
 
-          <Route path="/driver" element={<DriversPage isAdmin={isAdmin} />} />
-          <Route path="/driver/:id" element={<DriverDetailPage />} />
+            <Route path="/driver" element={<DriversPage isAdmin={isAdmin} />} />
+            <Route path="/driver/:id" element={<DriverDetailPage />} />
 
-          <Route
-            path="/constructor"
-            element={<ConstructorPage isAdmin={isAdmin} />}
-          />
-          <Route path="/constructor/:id" element={<ConstructorDetailPage />} />
+            <Route
+              path="/constructor"
+              element={<ConstructorPage isAdmin={isAdmin} />}
+            />
+            <Route path="/constructor/:id" element={<ConstructorDetailPage />} />
 
-          <Route path="/circuit" element={<CircuitPage isAdmin={isAdmin} />} />
-          <Route path="/circuit/:id" element={<CircuitDetailPage />} />
+            <Route path="/circuit" element={<CircuitPage isAdmin={isAdmin} />} />
+            <Route path="/circuit/:id" element={<CircuitDetailPage />} />
 
-          <Route
-            path="/login"
-            element={<LoginPage onLoginSuccess={() => setIsAdmin(true)} />}
-          />
+            <Route
+              path="/login"
+              element={<LoginPage onLoginSuccess={() => setIsAdmin(true)} />}
+            />
 
-          <Route path="/admin/drivers" element={<AdminDriverPage />} />
-          <Route path="/admin/grandprix" element={<AdminGrandPrixPage />} />
-          <Route path="/admin/constructors" element={<AdminConstructorPage />} />
-          <Route path="/admin/circuits" element={<AdminCircuitPage />} />
-          <Route path="/admin/statistics" element={<AdminStatisticsPage />} />
+            <Route path="/admin/drivers" element={<AdminDriverPage />} />
+            <Route path="/admin/grandprix" element={<AdminGrandPrixPage />} />
+            <Route path="/admin/constructors" element={<AdminConstructorPage />} />
+            <Route path="/admin/circuits" element={<AdminCircuitPage />} />
+            <Route path="/admin/statistics" element={<AdminStatisticsPage />} />
 
-          <Route
-            path="*"
-            element={<div className="not-found">404 - Oldal nem található</div>}
-          />
-        </Routes>
-      </div>
-    </Router>
+            <Route
+              path="*"
+              element={<div className="not-found">404 - Oldal nem található</div>}
+            />
+          </Routes>
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 };
 
