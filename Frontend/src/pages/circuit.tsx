@@ -9,8 +9,10 @@ interface Circuit {
   Location: string;
   Country: string;
   Length: number;
-  Turns: number;
-  LapRecord?: string;
+  Laps: number;
+  FirstGrandPrix: number;
+  RecordDriver?: string;
+  RecordLapTime?: string;
   Image?: string;
 }
 
@@ -84,61 +86,61 @@ function CircuitPage({ isAdmin }: CircuitPageProps) {
       </div>
 
       <div className="circuits-grid">
-        {circuits.map((circuit) => {
-          const circuitImage = getCircuitImage(circuit.Country);
-          
-          return (
-            <div
-              key={circuit.CircuitID}
-              onClick={() => handleCircuitClick(circuit.CircuitID)}
-              className="circuit-card"
-            >
-              <h3 className="circuit-name">{circuit.Name}</h3>
-              <p className="circuit-location">{circuit.Country}</p>
-              
-              <div className="circuit-stats">
-                <div className="stat">
-                  <span className="stat-label">Length</span>
-                  <span className="stat-value">{circuit.Length} km</span>
-                </div>
-                <div className="stat">
-                  <span className="stat-label">Turns</span>
-                  <span className="stat-value">{circuit.Turns}</span>
-                </div>
-              </div>
-              
-              {circuitImage && (
-                <div 
-                  className="circuit-image-wrap"
-                  style={{
-                    position: 'absolute',
-                    bottom: '0.5rem',
-                    right: '0.5rem',
-                    width: '45%',
-                    maxWidth: '200px',
-                    opacity: 0.4,
-                    zIndex: 1
-                  }}
-                >
-                  <img 
-                    src={circuitImage}
-                    alt={circuit.Name}
-                    className="circuit-image"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      objectFit: 'contain',
-                      filter: 'brightness(1.8) contrast(1.2) drop-shadow(0 0 6px rgba(255,255,255,0.3))'
-                    }}
-                  />
-                </div>
-              )}
-            </div>
-          );
-        })}
+       {circuits.map((circuit) => {
+  const circuitImage = getCircuitImage(circuit.Country);
+
+  return (
+    <div
+      key={circuit.CircuitID}
+      onClick={() => handleCircuitClick(circuit.CircuitID)}
+      className="circuit-card"
+    >
+      <div className="circuit-top">
+        <div>
+          <h3 className="circuit-name">{circuit.Name}</h3>
+          <p className="circuit-location">
+            {circuit.Location}, {circuit.Country}
+          </p>
+        </div>
       </div>
+<div className="circuit-stats-grid">
+  <div className="stat-box">
+    <span>Length </span>
+    <strong>{circuit.Length} km</strong>
+  </div>
+
+  <div className="stat-box">
+    <span>Laps </span>
+    <strong>{circuit.Laps}</strong>
+  </div>
+
+  <div className="stat-box">
+    <span>First GP </span>
+    <strong>{circuit.FirstGrandPrix}</strong>
+  </div>
+
+  <div className="stat-box">
+    <span>Record </span>
+    <strong>
+      {circuit.RecordDriver
+        ? `${circuit.RecordDriver} – ${circuit.RecordLapTime}`
+        : "-"}
+    </strong>
+  </div>
+</div>
+
+      {circuitImage && (
+        <div className="circuit-image-wrap">
+          <img src={circuitImage} alt={circuit.Name} />
+        </div>
+      )}
     </div>
   );
-}
+})}
+                </div>
+              
+            </div>
+          );
+        }
 
 export default CircuitPage;
