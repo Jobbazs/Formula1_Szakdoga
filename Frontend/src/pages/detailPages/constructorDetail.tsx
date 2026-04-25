@@ -64,13 +64,13 @@ function ConstructorDetailPage() {
     fetchData();
   }, [id]);
 
-  if (loading) return <div className="loading">Betöltés...</div>;
-  if (!constructor) return <div className="loading">Nem található csapat</div>;
+  if (loading) return <div className="loading">Loading...</div>;
+  if (!constructor) return <div className="loading">No constructor found</div>;
 
   return (
     <div className="driver-detail-page">
       <button className="detail-back-btn" onClick={() => navigate("/constructor")}>
-        ← Vissza
+        ← Back
       </button>
 
       <div

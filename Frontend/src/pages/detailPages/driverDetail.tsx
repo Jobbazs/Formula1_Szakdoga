@@ -59,8 +59,8 @@ function DriverDetailPage() {
     fetchData();
   }, [id]);
 
-  if (loading) return <div className="loading">Betöltés...</div>;
-  if (!driver) return <div className="loading">Nem található versenyző</div>;
+  if (loading) return <div className="loading">Loading...</div>;
+  if (!driver) return <div className="loading">No driver found</div>;
 
   const formatDate = (date?: string) => {
     if (!date) return "-";
@@ -70,7 +70,7 @@ function DriverDetailPage() {
   return (
     <div className="driver-detail-page">
       <button className="detail-back-btn" onClick={() => navigate("/driver")}>
-        ← Vissza
+        ← Back
       </button>
 
       <div
@@ -99,11 +99,11 @@ function DriverDetailPage() {
 
       <div className="driver-detail-stats">
         <div className="driver-detail-card">
-          <div className="driver-detail-label">Születési dátum</div>
+          <div className="driver-detail-label">Born </div>
           <div className="driver-detail-value">{formatDate(driver.BirthDate)}</div>
         </div>
         <div className="driver-detail-card">
-          <div className="driver-detail-label">Nemzetiség</div>
+          <div className="driver-detail-label">Nationality </div>
           <div className="driver-detail-value">{driver.Nationality}</div>
         </div>
         <div
@@ -116,7 +116,7 @@ function DriverDetailPage() {
           }}
         >
           <div className="driver-detail-label" style={{ color: "rgba(255,255,255,0.85)" }}>
-            Csapat
+            Constructor
           </div>
           <div className="driver-detail-value" style={{ color: "#fff" }}>
             {constructor?.Name ?? "-"}
@@ -126,7 +126,7 @@ function DriverDetailPage() {
 
       {driver.Biography && (
         <div className="driver-detail-bio">
-          <h2>Életrajz</h2>
+          <h2>Biography</h2>
           <p>{driver.Biography}</p>
         </div>
       )}

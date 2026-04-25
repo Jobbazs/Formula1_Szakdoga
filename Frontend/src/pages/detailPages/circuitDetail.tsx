@@ -72,8 +72,8 @@ function CircuitDetailPage() {
     fetchData();
   }, [id]);
 
-  if (loading) return <div className="loading">Betöltés...</div>;
-  if (!circuit) return <div className="loading">Nem található pálya</div>;
+  if (loading) return <div className="loading">Loading...</div>;
+  if (!circuit) return <div className="loading">No circuit found</div>;
 
   const circuitImage = circuitImageMap[circuit.Country];
   const heroBackground = countryColors[circuit.Country] || "linear-gradient(135deg, #1a1a1a 0%, #444 100%)";
@@ -81,7 +81,7 @@ function CircuitDetailPage() {
   return (
     <div className="driver-detail-page">
       <button className="detail-back-btn" onClick={() => navigate("/circuit")}>
-        ← Vissza
+        ← Back
       </button>
 
       <div
@@ -111,19 +111,19 @@ function CircuitDetailPage() {
 
       <div className="driver-detail-stats">
         <div className="driver-detail-card">
-          <div className="driver-detail-label"> Helyszín</div>
+          <div className="driver-detail-label"> Location </div>
           <div className="driver-detail-value">{circuit.Location}</div>
         </div>
         <div className="driver-detail-card">
-          <div className="driver-detail-label">Első GP</div>
+          <div className="driver-detail-label">First GP </div>
           <div className="driver-detail-value">{circuit.FirstGrandPrix ?? "-"}</div>
         </div>
         <div className="driver-detail-card">
-          <div className="driver-detail-label"> Köridő rekord</div>
+          <div className="driver-detail-label"> Laptime rekord </div>
           <div className="driver-detail-value">{circuit.RecordLapTime ?? "-"}</div>
         </div>
         <div className="driver-detail-card">
-          <div className="driver-detail-label"> Rekorder</div>
+          <div className="driver-detail-label"> Record </div>
           <div className="driver-detail-value">{circuit.RecordDriver ?? "-"}</div>
         </div>
       </div>
@@ -131,7 +131,7 @@ function CircuitDetailPage() {
       {races.length > 0 && (
         <>
           <h2 style={{ color: "#e10600", marginTop: "2rem", textAlign: "center" }}>
-            Megrendezett Grand Prix-k
+            Grand Prix Races
           </h2>
           <div className="constructor-drivers-grid">
             {races.map(gp => (

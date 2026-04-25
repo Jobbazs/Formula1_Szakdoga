@@ -11,7 +11,6 @@
   background: linear-gradient(135deg, #0f0f1a, #1c1c2e);
 }
 
-/* CARD */
 .login-form {
   width: 100%;
   max-width: 380px;
@@ -31,7 +30,6 @@
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
-/* TITLE */
 .login-form h2 {
   text-align: center;
   font-size: 1.6rem;
@@ -40,20 +38,17 @@
   letter-spacing: 1px;
 }
 
-/* FORM GROUP */
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
 }
 
-/* LABEL */
 .form-group label {
   font-size: 0.8rem;
   opacity: 0.7;
 }
 
-/* INPUT */
 .form-group input {
   width: 100%;
   padding: 0.65rem 0.75rem;
@@ -69,31 +64,26 @@
   transition: all 0.2s ease;
 }
 
-/* FOCUS */
 .form-group input:focus {
   outline: none;
   border-color: #e10600;
   box-shadow: 0 0 0 2px rgba(225, 6, 0, 0.3);
 }
 
-/* ERROR */
 .form-group input.error {
   border-color: #ff4d4f;
 }
 
-/* DISABLED */
 .form-group input:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-/* ERROR TEXT */
 .error-message {
   font-size: 0.75rem;
   color: #ff4d4f;
 }
 
-/* BUTTON */
 .submit-button {
   margin-top: 0.5rem;
   padding: 0.7rem;
@@ -111,13 +101,11 @@
   transition: all 0.2s ease;
 }
 
-/* HOVER */
 .submit-button:hover:not(:disabled) {
   background: #ff1e1e;
   transform: translateY(-1px);
 }
 
-/* DISABLED */
 .submit-button:disabled {
   background: #555;
   cursor: not-allowed;

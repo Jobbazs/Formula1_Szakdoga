@@ -98,8 +98,8 @@ function GrandPrixDetailPage() {
     fetchData();
   }, [id]);
 
-  if (loading) return <div className="loading">Betöltés...</div>;
-  if (!gp) return <div className="loading">Nem található Grand Prix</div>;
+  if (loading) return <div className="loading">Loading...</div>;
+  if (!gp) return <div className="loading">No Grand Prix found</div>;
 
   const circuitImage = circuitImageMap[gp.Country];
   const winnerImage = winner ? imageMap[winner.Name as keyof typeof imageMap] : null;
@@ -107,7 +107,7 @@ function GrandPrixDetailPage() {
   return (
     <div className="driver-detail-page">
       <button className="detail-back-btn" onClick={() => navigate("/grand_prix")}>
-        ← Vissza
+        ← Back
       </button>
 
       <div
@@ -144,7 +144,7 @@ function GrandPrixDetailPage() {
           }}
         >
           <div className="driver-detail-label" style={{ color: "rgba(255,255,255,0.85)" }}>
-             Pálya
+             Circuit
           </div>
           <div className="driver-detail-value" style={{ color: "#fff" }}>
             {circuit?.Name ?? "-"}
@@ -172,7 +172,7 @@ function GrandPrixDetailPage() {
           )}
           <div>
             <div className="driver-detail-label" style={{ color: "rgba(255,255,255,0.85)" }}>
-               Győztes
+               Winner
             </div>
             <div className="driver-detail-value" style={{ color: "#fff" }}>
               {winner?.Name ?? "-"}
