@@ -13,7 +13,6 @@ return new class extends Migration
         DB::unprepared('DROP TRIGGER IF EXISTS before_winner_update');
         DB::unprepared('DROP TRIGGER IF EXISTS before_position_duplicate_check');
 
-        // ===== TRIGGER 1: Maximum 20 POZÍCIÓ (nem DriverID!) =====
         DB::unprepared('
             CREATE TRIGGER before_race_result_insert 
             BEFORE INSERT ON race_result
@@ -44,7 +43,6 @@ return new class extends Migration
             END
         ');
 
-        // ===== TRIGGER 2: Pontok automatikus kiosztása pozíció alapján =====
         DB::unprepared('
             CREATE TRIGGER before_points_insert 
             BEFORE INSERT ON race_result
@@ -102,7 +100,6 @@ return new class extends Migration
             END
         ');
 
-        // ===== TRIGGER 3: Győztes automatikus frissítése =====
         DB::unprepared('
             CREATE TRIGGER after_race_result_insert 
             AFTER INSERT ON race_result
@@ -116,7 +113,6 @@ return new class extends Migration
             END
         ');
 
-        // ===== TRIGGER 4: Győztes nem változtatható meg =====
         DB::unprepared('
             CREATE TRIGGER before_winner_update 
             BEFORE UPDATE ON grandprix
@@ -131,7 +127,6 @@ return new class extends Migration
             END
         ');
 
-        // ===== TRIGGER 5: Pozíció egyediség ellenőrzése versenyen belül =====
         DB::unprepared('
             CREATE TRIGGER before_position_duplicate_check 
             BEFORE INSERT ON race_result

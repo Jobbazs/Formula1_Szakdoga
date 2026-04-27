@@ -1,10 +1,17 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
 class RaceResult extends Model
 {
     use HasFactory;
 
     protected $primaryKey = 'ResultID';
     protected $table = 'race_result';
-    public $timestamps = false; // 👈
+    public $timestamps = false; 
 
     protected $fillable = [
         'ResultID', 'GrandPrixID', 'DriverID', 'ConstructorID',
