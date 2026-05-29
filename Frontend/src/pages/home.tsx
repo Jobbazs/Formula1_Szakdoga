@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/home.css";
 
-import { imageMap } from "../utils/drivers-image-map";
-import { constructorCarMap, constructorLogoMap } from "../utils/constructor-image-map";
+// import { imageMap } from "../utils/drivers-image-map";
+// import { constructorCarMap, constructorLogoMap } from "../utils/constructor-image-map";
 
 interface Driver {
   DriverID: number;
