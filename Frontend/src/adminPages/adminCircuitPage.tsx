@@ -44,7 +44,6 @@ function AdminCircuitPage() {
 
   useEffect(() => { fetchCircuits(); }, []);
 
-  // ─── API helpers ──────────────────────────────────────────────────────────
 
   const getCookie = (name: string): string | null => {
     const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
@@ -62,7 +61,6 @@ function AdminCircuitPage() {
     "X-XSRF-TOKEN": csrfToken,
   });
 
-  // ─── Data fetching ────────────────────────────────────────────────────────
 
   const fetchCircuits = async () => {
     setLoading(true);
@@ -76,7 +74,6 @@ function AdminCircuitPage() {
     }
   };
 
-  // ─── CRUD handlers ────────────────────────────────────────────────────────
 
   const handleAdd = async () => {
     try {
@@ -142,7 +139,6 @@ function AdminCircuitPage() {
     }
   };
 
-  // ─── Sub-components ───────────────────────────────────────────────────────
 
   const renderAddForm = () => (
     <div className="admin-form-box">
@@ -190,7 +186,7 @@ function AdminCircuitPage() {
             <td>{c.RecordDriver || "-"}</td>
             <td className="admin-driver-actions">
               <button className="admin-edit-btn" onClick={() => setEditC({ ...c })}>
-                ✏️ Szerkesztés
+                 Szerkesztés
               </button>
               {deleteConfirmId === c.CircuitID ? (
                 <>
@@ -199,7 +195,7 @@ function AdminCircuitPage() {
                 </>
               ) : (
                 <button className="admin-delete-btn" onClick={() => setDeleteConfirmId(c.CircuitID)}>
-                  🗑 Törlés
+                   Törlés
                 </button>
               )}
             </td>
@@ -231,7 +227,6 @@ function AdminCircuitPage() {
     </div>
   );
 
-  // ─── Render ───────────────────────────────────────────────────────────────
 
   return (
     <div className="admin-form-page">
@@ -244,7 +239,7 @@ function AdminCircuitPage() {
               {showAddForm ? "✕ Bezár" : "+ Add Circuit"}
             </button>
             <button className="admin-form-cancel" onClick={() => navigate("/circuit")}>
-              ← Vissza
+               Back
             </button>
           </div>
         </div>

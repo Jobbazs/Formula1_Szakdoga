@@ -54,7 +54,6 @@ function AdminStatisticsPage() {
 
   useEffect(() => { fetchResults(); }, []);
 
-  // ─── API helpers ──────────────────────────────────────────────────────────
 
   const getCookie = (name: string): string | null => {
     const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
@@ -72,7 +71,6 @@ function AdminStatisticsPage() {
     "X-XSRF-TOKEN": csrfToken,
   });
 
-  // ─── Data fetching ────────────────────────────────────────────────────────
 
   const fetchResults = async () => {
     setLoading(true);
@@ -86,7 +84,6 @@ function AdminStatisticsPage() {
     }
   };
 
-  // ─── CRUD handlers ────────────────────────────────────────────────────────
 
   const handleAdd = async () => {
     try {
@@ -163,7 +160,6 @@ function AdminStatisticsPage() {
     }
   };
 
-  // ─── Sub-components ───────────────────────────────────────────────────────
 
   const renderAddForm = () => (
     <div className="admin-form-box">
@@ -225,7 +221,7 @@ function AdminStatisticsPage() {
             <td>{r.GpOrSprint}</td>
             <td className="admin-driver-actions">
               <button className="admin-edit-btn" onClick={() => setEditR({ ...r })}>
-                ✏️
+                Szerkesztés
               </button>
               {deleteConfirmId === r.ResultID ? (
                 <>
@@ -234,7 +230,7 @@ function AdminStatisticsPage() {
                 </>
               ) : (
                 <button className="admin-delete-btn" onClick={() => setDeleteConfirmId(r.ResultID)}>
-                  🗑
+                  Törlés 
                 </button>
               )}
             </td>
@@ -276,7 +272,6 @@ function AdminStatisticsPage() {
     </div>
   );
 
-  // ─── Render ───────────────────────────────────────────────────────────────
 
   return (
     <div className="admin-form-page">
@@ -289,7 +284,7 @@ function AdminStatisticsPage() {
               {showAddForm ? "✕ Bezár" : "+ Add Race Result"}
             </button>
             <button className="admin-form-cancel" onClick={() => navigate("/statistics")}>
-              ← Vissza
+              Back
             </button>
           </div>
         </div>

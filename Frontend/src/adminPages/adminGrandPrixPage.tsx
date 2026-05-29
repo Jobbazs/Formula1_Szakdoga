@@ -243,7 +243,7 @@ function AdminGrandPrixPage() {
               {showAddForm ? "✕ Bezár" : "+ Add Grand Prix"}
             </button>
             <button className="admin-form-cancel" onClick={() => navigate("/grand_prix")}>
-              ← Vissza
+              Back
             </button>
           </div>
         </div>

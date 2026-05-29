@@ -30,15 +30,28 @@ type ConstructorForm = {
 };
 
 const EMPTY_FORM: ConstructorForm = {
-  Name: "", Nationality: "", FoundedYear: "", TeamPrincipal: "",
-  Wins: "0", PolePositions: "0", Podiums: "0", WorldChampionships: "0",
-  History: "", Image: "",
+  Name: "",
+  Nationality: "",
+  FoundedYear: "",
+  TeamPrincipal: "",
+  Wins: "0",
+  PolePositions: "0",
+  Podiums: "0",
+  WorldChampionships: "0",
+  History: "",
+  Image: "",
 };
 
 const API_BASE = "http://127.0.0.1:8000/api";
 const SANCTUM_URL = "http://localhost:8000/sanctum/csrf-cookie";
 
-const NUMBER_FIELDS = ["FoundedYear", "Wins", "PolePositions", "Podiums", "WorldChampionships"];
+const NUMBER_FIELDS = [
+  "FoundedYear",
+  "Wins",
+  "PolePositions",
+  "Podiums",
+  "WorldChampionships",
+];
 
 function AdminConstructorPage() {
   const navigate = useNavigate();
@@ -49,9 +62,9 @@ function AdminConstructorPage() {
   const [deleteConfirmId, setDeleteConfirmId] = useState<number | null>(null);
   const [form, setForm] = useState<ConstructorForm>(EMPTY_FORM);
 
-  useEffect(() => { fetchConstructors(); }, []);
-
-  // ─── API helpers ──────────────────────────────────────────────────────────
+  useEffect(() => {
+    fetchConstructors();
+  }, []);
 
   const getCookie = (name: string): string | null => {
     const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
@@ -65,11 +78,9 @@ function AdminConstructorPage() {
 
   const authHeaders = (csrfToken: string): HeadersInit => ({
     "Content-Type": "application/json",
-    "Accept": "application/json",
+    Accept: "application/json",
     "X-XSRF-TOKEN": csrfToken,
   });
-
-  // ─── Data fetching ────────────────────────────────────────────────────────
 
   const fetchConstructors = async () => {
     setLoading(true);
@@ -82,8 +93,6 @@ function AdminConstructorPage() {
       setLoading(false);
     }
   };
-
-  // ─── CRUD handlers ────────────────────────────────────────────────────────
 
   const handleAdd = async () => {
     try {
@@ -117,16 +126,19 @@ function AdminConstructorPage() {
     if (!editC) return;
     try {
       const csrfToken = await getCsrfToken();
-      const res = await fetch(`${API_BASE}/constructor/${editC.ConstructorID}`, {
-        method: "PUT",
-        credentials: "include",
-        headers: authHeaders(csrfToken),
-        body: JSON.stringify({
-          ...editC,
-          History: editC.History || "",
-          Image: editC.Image || "",
-        }),
-      });
+      const res = await fetch(
+        `${API_BASE}/constructor/${editC.ConstructorID}`,
+        {
+          method: "PUT",
+          credentials: "include",
+          headers: authHeaders(csrfToken),
+          body: JSON.stringify({
+            ...editC,
+            History: editC.History || "",
+            Image: editC.Image || "",
+          }),
+        },
+      );
       if (res.ok) {
         setEditC(null);
         fetchConstructors();
@@ -151,30 +163,40 @@ function AdminConstructorPage() {
     }
   };
 
-  // ─── Sub-components ───────────────────────────────────────────────────────
-
   const renderAddForm = () => (
     <div className="admin-form-box">
       <h2>Új Constructor</h2>
       <div className="admin-form">
-        {(Object.keys(EMPTY_FORM) as (keyof ConstructorForm)[]).filter(f => f !== "History").map((field) => (
-          <div className="admin-form-group" key={field}>
-            <label>{field}</label>
-            <input
-              type={NUMBER_FIELDS.includes(field) ? "number" : "text"}
-              value={form[field]}
-              onChange={(e) => setForm({ ...form, [field]: e.target.value })}
-            />
-          </div>
-        ))}
+        {(Object.keys(EMPTY_FORM) as (keyof ConstructorForm)[])
+          .filter((f) => f !== "History")
+          .map((field) => (
+            <div className="admin-form-group" key={field}>
+              <label>{field}</label>
+              <input
+                type={NUMBER_FIELDS.includes(field) ? "number" : "text"}
+                value={form[field]}
+                onChange={(e) => setForm({ ...form, [field]: e.target.value })}
+              />
+            </div>
+          ))}
         <div className="admin-form-group">
           <label>History</label>
-          <textarea rows={3} value={form.History}
-            onChange={(e) => setForm({ ...form, History: e.target.value })} />
+          <textarea
+            rows={3}
+            value={form.History}
+            onChange={(e) => setForm({ ...form, History: e.target.value })}
+          />
         </div>
         <div className="admin-form-buttons">
-          <button className="admin-form-save" onClick={handleAdd}>Mentés</button>
-          <button className="admin-form-cancel" onClick={() => setShowAddForm(false)}>Mégse</button>
+          <button className="admin-form-save" onClick={handleAdd}>
+            Mentés
+          </button>
+          <button
+            className="admin-form-cancel"
+            onClick={() => setShowAddForm(false)}
+          >
+            Mégse
+          </button>
         </div>
       </div>
     </div>
@@ -203,17 +225,33 @@ function AdminConstructorPage() {
             <td>{c.TeamPrincipal}</td>
             <td>{c.WorldChampionships}</td>
             <td className="admin-driver-actions">
-              <button className="admin-edit-btn" onClick={() => setEditC({ ...c })}>
-                ✏️ Szerkesztés
+              <button
+                className="admin-edit-btn"
+                onClick={() => setEditC({ ...c })}
+              >
+                Szerkesztés
               </button>
               {deleteConfirmId === c.ConstructorID ? (
                 <>
-                  <button className="admin-form-save" onClick={() => handleDelete(c.ConstructorID)}>Biztos?</button>
-                  <button className="admin-form-cancel" onClick={() => setDeleteConfirmId(null)}>Mégse</button>
+                  <button
+                    className="admin-form-save"
+                    onClick={() => handleDelete(c.ConstructorID)}
+                  >
+                    Biztos?
+                  </button>
+                  <button
+                    className="admin-form-cancel"
+                    onClick={() => setDeleteConfirmId(null)}
+                  >
+                    Mégse
+                  </button>
                 </>
               ) : (
-                <button className="admin-delete-btn" onClick={() => setDeleteConfirmId(c.ConstructorID)}>
-                  🗑 Törlés
+                <button
+                  className="admin-delete-btn"
+                  onClick={() => setDeleteConfirmId(c.ConstructorID)}
+                >
+                  Törlés
                 </button>
               )}
             </td>
@@ -227,20 +265,35 @@ function AdminConstructorPage() {
     <div className="modal-overlay" onClick={() => setEditC(null)}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>
         <h2>Szerkesztés</h2>
-        {(["Name", "Nationality", "FoundedYear", "TeamPrincipal", "Wins", "PolePositions", "Podiums", "WorldChampionships", "Image"] as (keyof Constructor)[]).map((field) => (
+        {(
+          [
+            "Name",
+            "Nationality",
+            "FoundedYear",
+            "TeamPrincipal",
+            "Wins",
+            "PolePositions",
+            "Podiums",
+            "WorldChampionships",
+            "Image",
+          ] as (keyof Constructor)[]
+        ).map((field) => (
           <div className="admin-form-group" key={field}>
             <label>{field}</label>
             <input
               type={NUMBER_FIELDS.includes(field as string) ? "number" : "text"}
-              value={editC![field] as string | number || ""}
+              value={(editC![field] as string | number) || ""}
               onChange={(e) => setEditC({ ...editC!, [field]: e.target.value })}
             />
           </div>
         ))}
         <div className="admin-form-group">
           <label>History</label>
-          <textarea rows={3} value={editC!.History || ""}
-            onChange={(e) => setEditC({ ...editC!, History: e.target.value })} />
+          <textarea
+            rows={3}
+            value={editC!.History || ""}
+            onChange={(e) => setEditC({ ...editC!, History: e.target.value })}
+          />
         </div>
         <div className="modal-buttons">
           <button onClick={handleEdit}>Mentés</button>
@@ -250,20 +303,23 @@ function AdminConstructorPage() {
     </div>
   );
 
-  // ─── Render ───────────────────────────────────────────────────────────────
-
   return (
     <div className="admin-form-page">
       <div className="admin-driver-container">
-
         <div className="admin-driver-header">
           <h1>Constructor Management</h1>
           <div style={{ display: "flex", gap: "1rem" }}>
-            <button className="admin-add-btn" onClick={() => setShowAddForm(!showAddForm)}>
+            <button
+              className="admin-add-btn"
+              onClick={() => setShowAddForm(!showAddForm)}
+            >
               {showAddForm ? "✕ Bezár" : "+ Add Constructor"}
             </button>
-            <button className="admin-form-cancel" onClick={() => navigate("/constructor")}>
-              ← Vissza
+            <button
+              className="admin-form-cancel"
+              onClick={() => navigate("/constructor")}
+            >
+               Back
             </button>
           </div>
         </div>
@@ -271,7 +327,6 @@ function AdminConstructorPage() {
         {showAddForm && renderAddForm()}
         {loading ? <div className="loading">Betöltés...</div> : renderTable()}
         {editC && renderEditModal()}
-
       </div>
     </div>
   );
